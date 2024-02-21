@@ -17,6 +17,7 @@ import {
     useTheme,
 } from "remix-themes";
 import { themeSessionResolver } from "./sessions.server";
+import { ModeToggle } from "./components/mode-toggle";
 
 // Return the theme from the session storage using the loader
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -58,7 +59,10 @@ export function App() {
                 <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
                 <Links />
             </head>
-            <body className="bg-background">
+            <body className="relative bg-background">
+                <div className="fixed right-3 top-3 z-[99999]">
+                    <ModeToggle />
+                </div>
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />

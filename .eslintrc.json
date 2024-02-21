@@ -1,4 +1,4 @@
- {
+{
     "root": true,
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -15,7 +15,6 @@
 
     // Base config
     "extends": ["eslint:recommended"],
-
     "overrides": [
         // React
         {
@@ -72,5 +71,9 @@
                 "node": true
             }
         }
-    ]
+    ],
+
+    "rules": {
+        "react/prop-types": [2, { "ignore": ["className", "variant", "size"] }] // https://github.com/shadcn-ui/ui/issues/1013
+    }
 }
