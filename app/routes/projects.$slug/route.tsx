@@ -15,7 +15,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [
         {
             title: data?.frontmatter.title
-                ? `Toh Hong Xiang - ${data.frontmatter.title}`
+                ? `${data.frontmatter.title} | THX`
                 : "Untitled",
             description: data?.frontmatter.description ?? "",
         },
@@ -33,27 +33,36 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     }
 
     const { frontmatter, code } = post;
-    return json({ frontmatter, code });
+    return json({ frontmatter, code, slug });
 };
 
 export default function SpecificProjectRoute() {
-    const { code, frontmatter } = useLoaderData<typeof loader>();
+    const { code, frontmatter, slug } = useLoaderData<typeof loader>();
     const Component = useMemo(() => getMDXComponent(code), [code]);
 
     return (
         <div className="h-full w-full px-12">
             <div className="mx-auto flex max-w-[80ch] flex-col gap-8 py-16">
-                <h1 className="text-center text-4xl font-bold tracking-tight lg:text-5xl">
+                <h1
+                    className="text-center text-4xl font-bold lg:text-5xl"
+                    style={{ viewTransitionName: `${slug}-title` }}
+                >
                     {frontmatter.title}
                 </h1>
-                <p className="text-center text-lg font-semibold text-muted-foreground">
-                    <i>{frontmatter.detailedDescription}</i>
+                <p
+                    className="text-center text-muted-foreground"
+                    style={{
+                        viewTransitionName: `${slug}-detailed-description`,
+                    }}
+                >
+                    {frontmatter.detailedDescription}
                 </p>
             </div>
             <div className="px-4">
                 <Carousel
                     className="mx-auto max-w-[80ch]"
                     opts={{ loop: true }}
+                    style={{ viewTransitionName: `${slug}-cover-image` }}
                 >
                     <CarouselContent>
                         {[frontmatter.cover, ...frontmatter.screenshots].map(

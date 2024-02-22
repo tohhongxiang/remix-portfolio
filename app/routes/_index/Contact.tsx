@@ -1,7 +1,7 @@
 export default function Contact() {
     return (
         <div className="mx-auto flex w-full flex-col items-center justify-center p-4 pb-16">
-            <h1 className="mb-4 text-3xl font-semibold lg:text-5xl">
+            <h1 className="mb-8 text-center text-sm font-bold uppercase tracking-widest text-foreground">
                 Contact Me!
             </h1>
             <p className="text-md mb-16 text-center text-muted-foreground lg:text-lg">

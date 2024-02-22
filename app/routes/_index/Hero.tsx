@@ -74,7 +74,7 @@ export default function HeroSection() {
     return (
         <div
             className={cn(
-                "flex min-h-screen w-full flex-grow flex-col gap-x-8 gap-y-4 p-4 py-4 sm:py-32"
+                "flex min-h-screen w-full flex-grow flex-col gap-x-8 gap-y-4 py-4 sm:py-32"
             )}
         >
             <div className="relative flex flex-grow flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row">
@@ -120,7 +120,7 @@ export default function HeroSection() {
                         </motion.h1>
                         <motion.p
                             className={cn(
-                                "mb-4 text-center text-xl font-medium tracking-tight text-muted-foreground md:text-left"
+                                "mb-4 text-center text-xl font-medium text-muted-foreground md:text-left"
                             )}
                             variants={ctaTextItemVariants}
                         >

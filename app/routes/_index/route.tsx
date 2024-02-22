@@ -5,6 +5,8 @@ import { useLoaderData } from "@remix-run/react";
 import { getProjects } from "~/lib/post-server";
 import About from "./About";
 import Contact from "./Contact";
+import Experience from "./Experience";
+import Footer from "./Footer";
 
 export const meta: MetaFunction = () => {
     return [
@@ -30,11 +32,13 @@ export default function Index() {
     const data = useLoaderData<typeof loader>();
     console.log(data.projects);
     return (
-        <div className="overflow-hidden">
+        <div className="flex flex-col gap-y-16 overflow-hidden px-6">
             <HeroSection />
             <About />
+            <Experience />
             <Projects projects={data.projects} />
             <Contact />
+            <Footer />
         </div>
     );
 }
