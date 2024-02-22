@@ -1,6 +1,7 @@
 import { Button } from "~/components/ui/button";
 import { Link } from "@remix-run/react";
 import { ArrowRight, Link as LucideLink } from "lucide-react";
+import { useMediaQuery } from "usehooks-ts";
 
 interface Project {
     slug: string;
@@ -54,6 +55,8 @@ function ProjectCard({
     githubLink,
     demoLink,
 }: Project) {
+    const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion)");
+
     return (
         <div className="flex flex-col gap-6 sm:flex-row">
             <Link
@@ -67,7 +70,9 @@ function ProjectCard({
                     alt={""}
                     className="rounded-md object-cover"
                     style={{
-                        viewTransitionName: `${slug}-cover-image`,
+                        viewTransitionName: prefersReducedMotion
+                            ? undefined
+                            : `${slug}-cover-image`,
                     }}
                 />
             </Link>
