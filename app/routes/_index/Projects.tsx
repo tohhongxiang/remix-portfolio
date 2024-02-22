@@ -59,24 +59,27 @@ function ProjectCard({
 
     return (
         <div className="flex flex-col gap-6 sm:flex-row">
-            <Link
-                prefetch="intent"
-                unstable_viewTransition
-                to={`/projects/${slug}`}
-                className="mx-auto sm:max-w-64"
+            <div
+                className="h-40 sm:h-32 sm:w-64"
+                style={{
+                    viewTransitionName: prefersReducedMotion
+                        ? undefined
+                        : `${slug}-cover-image`,
+                }}
             >
-                <img
-                    src={image}
-                    alt={""}
-                    className="rounded-md object-cover"
-                    style={{
-                        viewTransitionName: prefersReducedMotion
-                            ? undefined
-                            : `${slug}-cover-image`,
-                    }}
-                />
-            </Link>
-            <div>
+                <Link
+                    prefetch="intent"
+                    unstable_viewTransition
+                    to={`/projects/${slug}`}
+                >
+                    <img
+                        src={image}
+                        alt={""}
+                        className="h-full w-full rounded-md object-cover"
+                    />
+                </Link>
+            </div>
+            <div className="basis-2/3">
                 <Link
                     prefetch="intent"
                     unstable_viewTransition
