@@ -10,6 +10,7 @@ import {
 import { Button } from "~/components/ui/button";
 import { Link } from "@remix-run/react";
 import { ArrowRight, Link as LucideLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Project {
     slug: string;
@@ -25,32 +26,84 @@ interface ProjectProps {
     projects: Project[];
 }
 
+const sectionVariants = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.6 } },
+};
+
+const projectTitleVariants = {
+    hidden: { opacity: 0, x: -100 },
+    show: {
+        opacity: 1,
+        x: 0,
+    },
+};
+
+const projectContainerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            duration: 0.1,
+        },
+    },
+};
+
+const projectContainerItemVariants = {
+    hidden: { opacity: 0, x: -100 },
+    show: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.3,
+            ease: "easeInOut",
+        },
+    },
+};
+
 export default function Projects({ projects }: ProjectProps) {
     return (
-        <div
+        <motion.div
             className={cn(
                 "bg-blur flex min-h-screen w-full flex-grow flex-col items-center justify-center gap-x-8 p-4 py-32"
             )}
             id="projects"
+            initial="hidden"
+            whileInView="show"
+            variants={sectionVariants}
+            viewport={{ once: true, amount: 0.3 }}
         >
-            <h1 className="mb-8 text-4xl font-light tracking-wide text-muted-foreground">
+            <motion.h1
+                variants={projectTitleVariants}
+                className="mb-8 text-4xl font-light tracking-wide text-muted-foreground"
+                viewport={{ once: true, amount: 0.5 }}
+            >
                 PROJECTS
-            </h1>
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
+            </motion.h1>
+            <motion.ul
+                className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3"
+                variants={projectContainerVariants}
+            >
                 {projects.map((project) => (
-                    <ProjectCard
+                    <motion.li
                         key={project.title}
-                        title={project.title}
-                        cover={project.cover}
-                        description={project.description}
-                        detailedDescription={project.detailedDescription}
-                        slug={project.slug}
-                        githubLink={project.githubLink}
-                        demoLink={project.demoLink}
-                    />
+                        variants={projectContainerItemVariants}
+                        viewport={{ once: true, amount: 0.5 }}
+                    >
+                        <ProjectCard
+                            title={project.title}
+                            cover={project.cover}
+                            description={project.description}
+                            detailedDescription={project.detailedDescription}
+                            slug={project.slug}
+                            githubLink={project.githubLink}
+                            demoLink={project.demoLink}
+                        />
+                    </motion.li>
                 ))}
-            </div>
-        </div>
+            </motion.ul>
+        </motion.div>
     );
 }
 
@@ -74,9 +127,9 @@ function ProjectCard({
             />
             <img
                 src={image}
-                height={160}
                 alt={""}
                 className="rounded-t-md object-cover"
+                style={{ height: 180 }}
             />
             <CardHeader>
                 <Link

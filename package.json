@@ -46,7 +46,8 @@
         "save-dev": "^0.0.1-security",
         "simple-icons": "^11.5.0",
         "tailwind-merge": "^2.2.1",
-        "tailwindcss-animate": "^1.0.7"
+        "tailwindcss-animate": "^1.0.7",
+        "usehooks-ts": "^2.15.0"
     },
     "devDependencies": {
         "@remix-run/dev": "^2.6.0",
