@@ -32,7 +32,7 @@ export default function Index() {
     const data = useLoaderData<typeof loader>();
     console.log(data.projects);
     return (
-        <div className="flex flex-col gap-y-16 overflow-hidden px-6">
+        <div className="flex flex-col gap-y-16 px-3">
             <HeroSection />
             <About />
             <Experience />

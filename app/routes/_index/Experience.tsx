@@ -2,10 +2,10 @@ export default function Experience() {
     return (
         <div className="flex w-full flex-col items-center">
             <div className="max-w-prose" id="experience">
-                <h1 className="mb-8 text-sm font-bold uppercase tracking-widest text-foreground">
+                <h1 className="sticky top-0 z-10 bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     Experience
                 </h1>
-                <ul className="flex flex-col items-start justify-center gap-y-8">
+                <ul className="flex flex-col items-start justify-center gap-y-8 px-3">
                     <li>
                         <ExperienceCard
                             title="Marketplace Intelligence Engineer"

@@ -19,11 +19,11 @@ interface ProjectProps {
 export default function Projects({ projects }: ProjectProps) {
     return (
         <div className="flex flex-col items-center">
-            <div className={"max-w-prose"} id="projects">
-                <h1 className="mb-8 text-sm font-bold uppercase tracking-widest">
+            <div className="max-w-prose" id="projects">
+                <h1 className="sticky top-0 z-10 w-full bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     PROJECTS
                 </h1>
-                <ul className="flex flex-col gap-y-12">
+                <ul className="flex flex-col gap-y-12 px-3">
                     {projects.map((project) => (
                         <li key={project.title}>
                             <ProjectCard
@@ -65,7 +65,7 @@ function ProjectCard({
                 <img
                     src={image}
                     alt={""}
-                    className="rounded-md object-cover transition-all duration-150 hover:scale-105 motion-reduce:transition-none"
+                    className="rounded-md object-cover"
                     style={{
                         viewTransitionName: `${slug}-cover-image`,
                     }}
