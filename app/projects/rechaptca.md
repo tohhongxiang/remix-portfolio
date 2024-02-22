@@ -10,6 +10,7 @@ screenshots:
         https://github.com/tohhongxiang123/rechaptca/blob/master/screenshots/landing-page.png?raw=true,
         https://github.com/tohhongxiang123/rechaptca/blob/master/screenshots/challenge-1.png?raw=true,
     ]
+date: Jan 2024
 ---
 
 ## Inspiration

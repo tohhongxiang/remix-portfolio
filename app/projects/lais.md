@@ -5,6 +5,7 @@ description: An AI Companion for students to study lectures more efficiently
 detailedDescription: lAIs is a web-based tool that takes a URL of an uploaded video lecture (on YouTube), and generates a variety of outputs to supplement learning. Summaries, audio transcriptions, quiz questions and even a chat to clarify doubts!
 githubLink: https://github.com/tohhongxiang123/techfest-2024/tree/master
 screenshots: [https://github.com/tohhongxiang123/techfest-2024/blob/master/screenshots/landing.png?raw=true, https://github.com/tohhongxiang123/techfest-2024/blob/master/screenshots/landing-2.png?raw=true, https://github.com/tohhongxiang123/techfest-2024/blob/master/screenshots/landing-3.png?raw=true]
+date: Feb 2024
 ---
 
 ## Inspiration

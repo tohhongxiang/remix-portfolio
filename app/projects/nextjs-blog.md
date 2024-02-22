@@ -5,6 +5,7 @@ description: Blog/Portfolio website created with NextJS and Tailwind
 detailedDescription: A responsive file-based blog created using NextJS 12 and TailwindCSS. Posts and notes are written with markdown, including LaTeX support.
 githubLink: https://github.com/tohhongxiang123/Blog
 demoLink: https://personalblog-nine.vercel.app/
+date: Dec 2023
 ---
 
 This NextJS blog application leverages a file-based content management system (CMS) for efficient content organization and management. With NextJS as the framework of choice, the application ensures high performance and scalability, ideal for handling a growing library of blog posts.

@@ -11,6 +11,7 @@ export type ProjectFrontMatter = {
     screenshots?: string[];
     githubLink: string;
     demoLink?: string;
+    date: string;
 };
 
 /**
@@ -92,5 +93,10 @@ export async function getProjects(directory: string) {
             };
         })
     );
-    return posts;
+
+    return posts.sort(
+        (postA, postB) =>
+            new Date(postB.frontmatter.date).getTime() -
+            new Date(postA.frontmatter.date).getTime()
+    );
 }
