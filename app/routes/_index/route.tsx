@@ -30,7 +30,7 @@ export default function Index() {
     const data = useLoaderData<typeof loader>();
     console.log(data.projects);
     return (
-        <div>
+        <div className="overflow-hidden">
             <HeroSection />
             <About />
             <Projects projects={data.projects} />
