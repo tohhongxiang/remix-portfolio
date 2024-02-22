@@ -1,4 +1,3 @@
-import { Link } from "@remix-run/react";
 import { ChevronDown } from "lucide-react";
 import LightDarkVariant from "~/components/light-dark-variant";
 import { Button } from "~/components/ui/button";
@@ -141,19 +140,27 @@ export default function HeroSection() {
                         size="lg"
                         variant="outline"
                         className="text-md"
-                        asChild
+                        onClick={() =>
+                            document
+                                .getElementById("about")
+                                ?.scrollIntoView({ behavior: "smooth" })
+                        }
                     >
-                        <Link to="#about">
-                            <span>About Me</span>
-                        </Link>
+                        <span>About Me</span>
                     </Button>
                 </motion.div>
                 <motion.div variants={ctaButtonsItemsVariants}>
-                    <Button size="lg" className="text-md" asChild>
-                        <Link to="#projects">
-                            <span>Projects</span>
-                            <ChevronDown className="ml-2 h-4 w-4" />
-                        </Link>
+                    <Button
+                        size="lg"
+                        className="text-md"
+                        onClick={() =>
+                            document
+                                .getElementById("projects")
+                                ?.scrollIntoView({ behavior: "smooth" })
+                        }
+                    >
+                        <span>Projects</span>
+                        <ChevronDown className="ml-2 h-4 w-4" />
                     </Button>
                 </motion.div>
             </motion.div>

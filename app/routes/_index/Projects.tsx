@@ -60,7 +60,7 @@ function ProjectCard({
     return (
         <div className="flex flex-col gap-6 sm:flex-row">
             <div
-                className="h-40 sm:h-32 sm:w-64"
+                className="h-40 overflow-hidden rounded-md sm:h-32 sm:w-64"
                 style={{
                     viewTransitionName: prefersReducedMotion
                         ? undefined
@@ -75,7 +75,7 @@ function ProjectCard({
                     <img
                         src={image}
                         alt={""}
-                        className="h-full w-full rounded-md object-cover"
+                        className="h-full w-full object-cover transition-all duration-150 hover:scale-105"
                     />
                 </Link>
             </div>
