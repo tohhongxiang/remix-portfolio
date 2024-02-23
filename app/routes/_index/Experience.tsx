@@ -1,3 +1,5 @@
+import { Button } from "~/components/ui/button";
+
 export default function Experience() {
     return (
         <div className="flex w-full flex-col items-center">
@@ -5,7 +7,7 @@ export default function Experience() {
                 <h1 className="sticky top-0 z-10 bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     Experience
                 </h1>
-                <ul className="flex flex-col items-start justify-center gap-y-8 px-3">
+                <ul className="mb-8 flex flex-col items-start justify-center gap-y-8 px-3">
                     <li>
                         <ExperienceCard
                             title="Marketplace Intelligence Engineer"
@@ -29,6 +31,18 @@ export default function Experience() {
                         />
                     </li>
                 </ul>
+                <div className="px-3">
+                    <Button asChild>
+                        <a
+                            href="resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="cursor-pointer"
+                        >
+                            View Full Resume
+                        </a>
+                    </Button>
+                </div>
             </div>
         </div>
     );
