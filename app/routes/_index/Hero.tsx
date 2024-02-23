@@ -73,10 +73,10 @@ export default function HeroSection() {
     return (
         <div
             className={cn(
-                "flex min-h-screen w-full flex-grow flex-col gap-x-8 gap-y-4 py-4 sm:py-32"
+                "flex min-h-screen w-full flex-grow flex-col justify-around gap-x-8 gap-y-4 py-4 sm:py-32"
             )}
         >
-            <div className="relative flex flex-grow flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row">
+            <div className="relative flex flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row md:items-end">
                 <motion.div
                     initial="hidden"
                     animate="show"
@@ -103,7 +103,7 @@ export default function HeroSection() {
                 </motion.div>
                 {isTextShown ? (
                     <motion.div
-                        className="flex flex-col gap-y-4 p-4"
+                        className="flex flex-col p-4"
                         initial="hidden"
                         animate="show"
                         variants={ctaTextVariants}
@@ -111,7 +111,7 @@ export default function HeroSection() {
                         <motion.h1
                             variants={ctaTextItemVariants}
                             className={cn(
-                                "text-center text-5xl font-semibold tracking-tight lg:text-7xl",
+                                "text-center text-5xl font-semibold tracking-tight md:text-left lg:text-7xl",
                                 heroTextGradientClassNames
                             )}
                         >
@@ -119,11 +119,20 @@ export default function HeroSection() {
                         </motion.h1>
                         <motion.p
                             className={cn(
-                                "mb-4 text-center text-xl font-medium text-muted-foreground md:text-left"
+                                "mb-4 text-center text-xl font-semibold text-foreground/80 md:text-left"
                             )}
                             variants={ctaTextItemVariants}
                         >
                             Full-stack Web Developer
+                        </motion.p>
+                        <motion.p
+                            className={cn(
+                                "mb-8 text-center text-xl text-muted-foreground md:text-left"
+                            )}
+                            variants={ctaTextItemVariants}
+                        >
+                            I build elegant, impactful and accessible digital
+                            experiences
                         </motion.p>
                         <SocialIcons />
                     </motion.div>
