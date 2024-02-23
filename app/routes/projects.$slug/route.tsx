@@ -41,7 +41,7 @@ export default function SpecificProjectRoute() {
     const Component = useMemo(() => getMDXComponent(code), [code]);
 
     return (
-        <div className="h-full w-full px-12">
+        <div className="h-full w-full px-6">
             <div className="mx-auto flex max-w-[80ch] flex-col gap-8 py-16">
                 <h1
                     className="text-center text-4xl font-bold lg:text-5xl"
@@ -58,7 +58,7 @@ export default function SpecificProjectRoute() {
                     {frontmatter.detailedDescription}
                 </p>
             </div>
-            <div className="px-4">
+            <div className="px-6">
                 <Carousel
                     className="mx-auto max-w-[80ch]"
                     opts={{ loop: true }}

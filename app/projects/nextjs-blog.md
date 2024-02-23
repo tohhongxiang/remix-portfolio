@@ -5,6 +5,7 @@ description: Blog/Portfolio website created with NextJS and Tailwind
 detailedDescription: A responsive file-based blog created using NextJS 12 and TailwindCSS. Posts and notes are written with markdown, including LaTeX support.
 githubLink: https://github.com/tohhongxiang123/Blog
 demoLink: https://personalblog-nine.vercel.app/
+screenshots: [https://github.com/tohhongxiang123/Blog/blob/main/screenshots/notes_page.png, https://github.com/tohhongxiang123/Blog/blob/main/screenshots/note_page.png?raw=true, https://github.com/tohhongxiang123/Blog/blob/main/screenshots/notes_with_code_highlighting.png, https://github.com/tohhongxiang123/Blog/blob/main/screenshots/portfolio_page.png]
 date: Dec 2023
 ---
 
