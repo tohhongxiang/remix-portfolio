@@ -31,6 +31,10 @@ Projects are stored as `.md` files within `app/projects`. Each project should in
 - `screenshots`: An array of links to images for the project
 - `date`: The date of the project (used to sort)
 
+## Deployment
+
+Update the domain within `sessions.server.ts`, and then push to github. Vercel will automatically handle deployment.
+
 ## Resources
 
 - https://blacksheepcode.com/posts/adding_msw_bundler_to_remix_app
