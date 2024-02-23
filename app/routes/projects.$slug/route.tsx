@@ -3,14 +3,8 @@ import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { getProject } from "~/lib/post-server";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "~/components/ui/carousel";
 import { LucideLink } from "lucide-react";
+import ImageCarousel from "~/components/image-carousel";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [
@@ -95,29 +89,22 @@ export default function SpecificProjectRoute() {
                     ) : null}
                 </div>
             </div>
-            <div className="px-6">
-                <Carousel
-                    className="mx-auto max-w-[80ch]"
-                    opts={{ loop: true }}
-                    style={{ viewTransitionName: `${slug}-cover-image` }}
-                >
-                    <CarouselContent>
-                        {[frontmatter.cover, ...frontmatter.screenshots].map(
-                            (image) => (
-                                <CarouselItem key={image}>
-                                    <img
-                                        src={image}
-                                        alt=""
-                                        className="h-full w-full object-contain"
-                                    />
-                                </CarouselItem>
-                            )
-                        )}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </Carousel>
-            </div>
+            <ImageCarousel
+                className="mx-auto max-w-[80ch]"
+                style={{ viewTransitionName: `${slug}-cover-image` }}
+            >
+                {[frontmatter.cover, ...frontmatter.screenshots].map(
+                    (image) => (
+                        <ImageCarousel.Item key={image}>
+                            <img
+                                src={image}
+                                alt=""
+                                className="h-full w-full rounded-md object-contain"
+                            />
+                        </ImageCarousel.Item>
+                    )
+                )}
+            </ImageCarousel>
             <div className="prose mx-auto py-16 dark:prose-invert">
                 <Component />
             </div>

@@ -4,7 +4,7 @@ cover: https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshot
 description: A fully-featured e-commerce platform with Directus and NextJS
 detailedDescription: This is a fully-fledged E-commerce template built using NextJS, Directus and Snipcart. It includes a CMS to provide sellers with a smooth and intuitive experience to manage their products.
 githubLink: https://github.com/tohhongxiang123/directus-nextjs
-screenshots: [https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/open_cart_page.png, https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/products_page.png, https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/product_page.png, https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/directus_product_page.png, https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/directus_edit_product_page.png]
+screenshots: [https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/open_cart_page.png?raw=true, https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/products_page.png?raw=true, https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/product_page.png?raw=true, https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/directus_product_page.png?raw=true]
 date: June 2023
 ---
 

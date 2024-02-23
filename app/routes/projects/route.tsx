@@ -1,33 +1,15 @@
-import { Link, Outlet } from "@remix-run/react";
-import LightDarkVariant from "~/components/light-dark-variant";
+import { Outlet } from "@remix-run/react";
+import Footer from "./footer";
+import Navbar from "./navbar";
 
 export default function Projects() {
     return (
         <>
-            <nav className="fixed left-0 top-0 z-10 w-full bg-background/80 px-4 py-4 backdrop-blur">
-                <Link to="/" className="flex items-center justify-start gap-2">
-                    <LightDarkVariant
-                        light={
-                            <img
-                                src="/images/hero.png"
-                                alt=""
-                                className="h-auto w-8"
-                            />
-                        }
-                        dark={
-                            <img
-                                src="/images/hero-dark.png"
-                                alt=""
-                                className="h-auto w-8" // negative bottom margin to account for height difference
-                            />
-                        }
-                    />
-                    <p className="font-bold">THX</p>
-                </Link>
-            </nav>
+            <Navbar />
             <div className="mt-4">
                 <Outlet />
             </div>
+            <Footer />
         </>
     );
 }
