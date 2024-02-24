@@ -33,7 +33,7 @@ export default function Projects({ projects }: ProjectProps) {
                         <li key={project.title}>
                             <div
                                 role="button"
-                                className="pointer-events-auto -mx-3 rounded px-3 py-6 transition duration-150 group-hover:opacity-50 group-hover:hover:bg-slate-300/30 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/20"
+                                className="pointer-events-auto -mx-3 rounded px-3 py-6 transition duration-150 group-hover:opacity-75 group-hover:hover:bg-slate-200/50 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/50"
                                 onClick={() => handleGoToProject(project.slug)}
                                 onKeyDown={(e) => {
                                     if (e.key === "Enter") {
@@ -74,7 +74,7 @@ function ProjectCard({
     const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion)");
 
     return (
-        <div className="flex flex-col gap-6 sm:flex-row">
+        <div className="group/card flex flex-col gap-6 sm:flex-row">
             <div
                 className="h-40 overflow-hidden rounded-md focus-within:border-2 focus-within:border-foreground focus-within:active:border-0 sm:h-32 sm:w-64"
                 style={{
@@ -91,7 +91,7 @@ function ProjectCard({
                     <img
                         src={image}
                         alt={""}
-                        className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105"
+                        className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105 group-hover/card:scale-105"
                     />
                 </Link>
             </div>
@@ -113,7 +113,7 @@ function ProjectCard({
                 <div className="mt-4">
                     <span className="inline-flex w-full -space-x-px rounded-md">
                         <Button
-                            className="pointer-events-auto w-full rounded-none rounded-l-md outline-none"
+                            className="w-full rounded-none rounded-l-md outline-none"
                             variant="outline"
                             asChild
                             onClick={(e) => e.stopPropagation()}
@@ -140,7 +140,7 @@ function ProjectCard({
                         </Button>
                         {demoLink ? (
                             <Button
-                                className="pointer-events-auto w-full rounded-none"
+                                className="w-full rounded-none"
                                 variant="outline"
                                 asChild
                                 onClick={(e) => e.stopPropagation()}
@@ -158,7 +158,7 @@ function ProjectCard({
                             </Button>
                         ) : null}
                         <Button
-                            className="pointer-events-auto w-full rounded-none rounded-r-md"
+                            className="w-full rounded-none rounded-r-md"
                             asChild
                             onClick={(e) => e.stopPropagation()}
                         >
