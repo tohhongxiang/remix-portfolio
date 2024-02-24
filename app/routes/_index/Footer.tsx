@@ -60,7 +60,7 @@ export default function Footer() {
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="hover:text-underline group flex items-center text-muted-foreground hover:text-foreground"
             >
-                <ArrowUp className="hidden h-4 w-4 group-hover:block" />
+                <ArrowUp className="h-4 w-4 opacity-0 transition-all duration-150 group-focus-within:animate-bounce group-focus-within:opacity-100 group-hover:animate-bounce group-hover:opacity-100 motion-reduce:group-focus-within:animate-none motion-reduce:group-hover:animate-none" />
                 <span className="ml-2">Back to top</span>
             </button>
         </footer>

@@ -1,5 +1,5 @@
 import { Button } from "~/components/ui/button";
-import { Link } from "@remix-run/react";
+import { Link, useNavigate } from "@remix-run/react";
 import { ArrowRight, Link as LucideLink } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
 
@@ -18,26 +18,42 @@ interface ProjectProps {
 }
 
 export default function Projects({ projects }: ProjectProps) {
+    const navigate = useNavigate();
+    const handleGoToProject = (slug: string) => {
+        navigate(`/projects/${slug}`, { unstable_viewTransition: true });
+    };
     return (
         <div className="flex flex-col items-center">
             <div className="max-w-prose" id="projects">
                 <h1 className="sticky top-0 z-10 w-full bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     PROJECTS
                 </h1>
-                <ul className="flex flex-col gap-y-12 px-3">
+                <ul className="group pointer-events-none flex flex-col gap-y-12 px-3">
                     {projects.map((project) => (
                         <li key={project.title}>
-                            <ProjectCard
-                                title={project.title}
-                                cover={project.cover}
-                                description={project.description}
-                                detailedDescription={
-                                    project.detailedDescription
-                                }
-                                slug={project.slug}
-                                githubLink={project.githubLink}
-                                demoLink={project.demoLink}
-                            />
+                            <div
+                                role="button"
+                                className="pointer-events-auto -mx-3 rounded px-3 py-6 transition duration-150 group-hover:opacity-50 group-hover:hover:bg-slate-300/30 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/20"
+                                onClick={() => handleGoToProject(project.slug)}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") {
+                                        handleGoToProject(project.slug);
+                                    }
+                                }}
+                                tabIndex={0}
+                            >
+                                <ProjectCard
+                                    title={project.title}
+                                    cover={project.cover}
+                                    description={project.description}
+                                    detailedDescription={
+                                        project.detailedDescription
+                                    }
+                                    slug={project.slug}
+                                    githubLink={project.githubLink}
+                                    demoLink={project.demoLink}
+                                />
+                            </div>
                         </li>
                     ))}
                 </ul>
@@ -60,7 +76,7 @@ function ProjectCard({
     return (
         <div className="flex flex-col gap-6 sm:flex-row">
             <div
-                className="h-40 overflow-hidden rounded-md sm:h-32 sm:w-64"
+                className="h-40 overflow-hidden rounded-md focus-within:border-2 focus-within:border-foreground focus-within:active:border-0 sm:h-32 sm:w-64"
                 style={{
                     viewTransitionName: prefersReducedMotion
                         ? undefined
@@ -75,7 +91,7 @@ function ProjectCard({
                     <img
                         src={image}
                         alt={""}
-                        className="h-full w-full object-cover transition-all duration-150 hover:scale-105"
+                        className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105"
                     />
                 </Link>
             </div>
@@ -95,9 +111,9 @@ function ProjectCard({
                     {detailedDescription}
                 </p>
                 <div className="mt-4">
-                    <span className="inline-flex w-full -space-x-px overflow-hidden rounded-md">
+                    <span className="inline-flex w-full -space-x-px rounded-md">
                         <Button
-                            className="pointer-events-auto w-full rounded-none rounded-l-md"
+                            className="pointer-events-auto w-full rounded-none rounded-l-md outline-none"
                             variant="outline"
                             asChild
                             onClick={(e) => e.stopPropagation()}
@@ -106,6 +122,7 @@ function ProjectCard({
                                 href={githubLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className="outline-none"
                             >
                                 <svg
                                     role="img"

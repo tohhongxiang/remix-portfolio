@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import { Button } from "~/components/ui/button";
 
 export default function Experience() {
@@ -32,14 +33,15 @@ export default function Experience() {
                     </li>
                 </ul>
                 <div className="px-3">
-                    <Button asChild>
+                    <Button asChild className="group">
                         <a
                             href="resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer"
                         >
-                            View Full Resume
+                            <span>View Full Resume</span>
+                            <ChevronRight className="ml-2 h-4 w-4 transition duration-150 group-hover:translate-x-1" />
                         </a>
                     </Button>
                 </div>
