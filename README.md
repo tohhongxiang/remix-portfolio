@@ -34,7 +34,9 @@ Projects are stored as `.md` files within `app/projects`. Each project should in
 ## Deployment
 
 Update the domain within `sessions.server.ts`, and then push to github. Vercel will automatically handle deployment.
+- The domain doesn't include `https://` (e.g. `portfolio.vercel.app`)
 
 ## Resources
 
 - https://blacksheepcode.com/posts/adding_msw_bundler_to_remix_app
+- https://www.sarasoueidan.com/blog/nested-links/

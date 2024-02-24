@@ -1,5 +1,5 @@
 import { Button } from "~/components/ui/button";
-import { Link, useNavigate } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import { ArrowRight, Link as LucideLink } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
 
@@ -18,30 +18,16 @@ interface ProjectProps {
 }
 
 export default function Projects({ projects }: ProjectProps) {
-    const navigate = useNavigate();
-    const handleGoToProject = (slug: string) => {
-        navigate(`/projects/${slug}`, { unstable_viewTransition: true });
-    };
     return (
         <div className="flex flex-col items-center">
             <div className="max-w-prose" id="projects">
-                <h1 className="sticky top-0 z-10 w-full bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
+                <h1 className="sticky top-0 z-30 w-full bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     PROJECTS
                 </h1>
                 <ul className="group pointer-events-none flex flex-col gap-y-12 px-3">
                     {projects.map((project) => (
                         <li key={project.title}>
-                            <div
-                                role="button"
-                                className="pointer-events-auto -mx-3 rounded px-3 py-6 transition duration-150 group-hover:opacity-75 group-hover:hover:bg-slate-200/50 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/50"
-                                onClick={() => handleGoToProject(project.slug)}
-                                onKeyDown={(e) => {
-                                    if (e.key === "Enter") {
-                                        handleGoToProject(project.slug);
-                                    }
-                                }}
-                                tabIndex={0}
-                            >
+                            <div className="pointer-events-auto -mx-3 rounded px-3 py-6 transition duration-150 group-hover:opacity-75 group-hover:hover:bg-slate-200/50 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/50">
                                 <ProjectCard
                                     title={project.title}
                                     cover={project.cover}
@@ -74,7 +60,7 @@ function ProjectCard({
     const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion)");
 
     return (
-        <div className="group/card flex flex-col gap-6 sm:flex-row">
+        <div className="group/card relative flex flex-col gap-6 sm:flex-row">
             <div
                 className="h-40 overflow-hidden rounded-md focus-within:border-2 focus-within:border-foreground focus-within:active:border-0 sm:h-32 sm:w-64"
                 style={{
@@ -83,26 +69,22 @@ function ProjectCard({
                         : `${slug}-cover-image`,
                 }}
             >
-                <Link
-                    prefetch="intent"
-                    unstable_viewTransition
-                    to={`/projects/${slug}`}
-                >
-                    <img
-                        src={image}
-                        alt={""}
-                        className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105 group-hover/card:scale-105"
-                    />
-                </Link>
+                <img
+                    src={image}
+                    alt={""}
+                    className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105 group-hover/card:scale-105"
+                />
             </div>
             <div className="basis-2/3">
                 <Link
-                    prefetch="intent"
-                    unstable_viewTransition
                     to={`/projects/${slug}`}
-                    className="pointer-events-auto hover:underline"
+                    unstable_viewTransition
+                    prefetch="intent"
+                    className="static before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-10 hover:underline"
                 >
-                    <h2 className="text-md font-semibold">{title}</h2>
+                    <h2 className="text-md pointer-events-auto font-semibold">
+                        {title}
+                    </h2>
                 </Link>
                 <p className="text-sm font-light text-muted-foreground">
                     {description}
@@ -110,70 +92,68 @@ function ProjectCard({
                 <p className="text-md mt-2 text-muted-foreground">
                     {detailedDescription}
                 </p>
-                <div className="mt-4">
-                    <span className="inline-flex w-full -space-x-px rounded-md">
+                <div className="my-4 inline-flex w-full -space-x-px rounded-md">
+                    <Button
+                        className="z-20 w-full rounded-none rounded-l-md outline-none"
+                        variant="outline"
+                        asChild
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="outline-none"
+                        >
+                            <svg
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4 fill-foreground"
+                            >
+                                <title>GitHub</title>
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                            <span className="ml-2 hidden sm:inline">
+                                Github
+                            </span>
+                        </a>
+                    </Button>
+                    {demoLink ? (
                         <Button
-                            className="w-full rounded-none rounded-l-md outline-none"
+                            className="z-20 w-full rounded-none"
                             variant="outline"
                             asChild
                             onClick={(e) => e.stopPropagation()}
                         >
                             <a
-                                href={githubLink}
+                                href={demoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="outline-none"
                             >
-                                <svg
-                                    role="img"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-4 w-4 fill-foreground"
-                                >
-                                    <title>GitHub</title>
-                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                                </svg>
+                                <LucideLink className="h-4 w-4" />
                                 <span className="ml-2 hidden sm:inline">
-                                    Github
+                                    Demo
                                 </span>
                             </a>
                         </Button>
-                        {demoLink ? (
-                            <Button
-                                className="w-full rounded-none"
-                                variant="outline"
-                                asChild
-                                onClick={(e) => e.stopPropagation()}
-                            >
-                                <a
-                                    href={demoLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <LucideLink className="h-4 w-4" />
-                                    <span className="ml-2 hidden sm:inline">
-                                        Demo
-                                    </span>
-                                </a>
-                            </Button>
-                        ) : null}
-                        <Button
-                            className="w-full rounded-none rounded-r-md"
-                            asChild
-                            onClick={(e) => e.stopPropagation()}
+                    ) : null}
+                    <Button
+                        className="z-20 w-full rounded-none rounded-r-md"
+                        asChild
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <Link
+                            to={`/projects/${slug}`}
+                            unstable_viewTransition
+                            prefetch="intent"
                         >
-                            <Link
-                                to={`/projects/${slug}`}
-                                unstable_viewTransition
-                                prefetch="intent"
-                            >
-                                <span className="mr-2 hidden sm:inline">
-                                    Details
-                                </span>
-                                <ArrowRight className="h-4 w-4" />
-                            </Link>
-                        </Button>
-                    </span>
+                            <span className="mr-2 hidden sm:inline">
+                                Details
+                            </span>
+                            <ArrowRight className="h-4 w-4" />
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </div>
