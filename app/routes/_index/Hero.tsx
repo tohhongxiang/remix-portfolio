@@ -9,7 +9,7 @@ const imageVariants = {
     hidden: {},
     show: {
         transition: {
-            delay: 1,
+            delay: 0.5,
         },
     },
 };
