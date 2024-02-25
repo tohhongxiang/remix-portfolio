@@ -66,7 +66,7 @@ function ExperienceCard({
 }: ExperienceCardProps) {
     return (
         <div>
-            <p className="text-sm uppercase text-muted-foreground opacity-75">
+            <p className="text-sm uppercase text-muted-foreground">
                 {start} - {end}
             </p>
             <h2 className="text-medium font-semibold">

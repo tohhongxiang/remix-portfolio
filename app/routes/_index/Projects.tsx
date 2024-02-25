@@ -82,6 +82,7 @@ function ProjectCard({
                     unstable_viewTransition
                     prefetch="intent"
                     className="static before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-10 hover:underline"
+                    aria-label={`Link to details about ${title}`}
                 >
                     <h2 className="text-md pointer-events-auto font-semibold">
                         {title}
@@ -105,6 +106,7 @@ function ProjectCard({
                             target="_blank"
                             rel="noopener noreferrer"
                             className="outline-none"
+                            aria-label={`Link to github repository for ${title}`}
                         >
                             <svg
                                 role="img"
@@ -131,6 +133,7 @@ function ProjectCard({
                                 href={demoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label={`Link to demo for ${title}`}
                             >
                                 <LucideLink className="h-4 w-4" />
                                 <span className="ml-2 hidden sm:inline">
@@ -148,6 +151,7 @@ function ProjectCard({
                             to={`/projects/${slug}`}
                             unstable_viewTransition
                             prefetch="intent"
+                            aria-label={`Link to read more about ${title}`}
                         >
                             <span className="mr-2 hidden sm:inline">
                                 Details
