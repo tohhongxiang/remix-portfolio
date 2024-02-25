@@ -29,6 +29,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: tailwindStyles },
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
     ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
