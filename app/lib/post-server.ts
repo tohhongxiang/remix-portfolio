@@ -26,8 +26,8 @@ export async function getProject(directory: string, slug: string) {
     const [source] = await Promise.all([readFile(projectFilePath, "utf-8")]);
 
     // Dyamically import all the rehype/remark plugins we are using
-    const [rehypeHighlight, remarkGfm, remarkMdxImages] = await Promise.all([
-        import("rehype-highlight").then((mod) => mod.default),
+    const [rehypePrettyCode, remarkGfm, remarkMdxImages] = await Promise.all([
+        import("rehype-pretty-code").then((mod) => mod.default),
         import("remark-gfm").then((mod) => mod.default),
         import("remark-mdx-images").then((mod) => mod.default),
     ]);
@@ -57,7 +57,7 @@ export async function getProject(directory: string, slug: string) {
             ];
             options.rehypePlugins = [
                 ...(options.rehypePlugins ?? []),
-                rehypeHighlight,
+                [rehypePrettyCode, { theme: "one-dark-pro" }],
             ];
             return options;
         },

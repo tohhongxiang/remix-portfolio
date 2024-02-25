@@ -10,6 +10,7 @@ import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
 import { Info, LucideLink } from "lucide-react";
 import ImageCarousel from "~/components/image-carousel";
+import CustomCodeBlock from "~/components/custom-code-block";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [
@@ -111,7 +112,7 @@ export default function SpecificProjectRoute() {
                 )}
             </ImageCarousel>
             <div className="prose mx-auto py-16 dark:prose-invert">
-                <Component />
+                <Component components={{ pre: CustomCodeBlock }} />
             </div>
         </div>
     );
