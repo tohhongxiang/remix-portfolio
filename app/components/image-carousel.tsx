@@ -47,18 +47,22 @@ export default function ImageCarousel({
             >
                 <CarouselContent>{children}</CarouselContent>
                 {hasMoreThanOneSlide ? (
-                    <div className="relative flex items-center justify-center">
+                    <div
+                        className="relative flex items-center justify-center"
+                        role="group"
+                        aria-roledescription="carousel-controls"
+                    >
                         <CarouselPrevious className="relative left-0 right-0 translate-y-0" />
-                        <div className="flex items-center justify-center gap-x-2 p-6">
+                        <div className="flex items-center justify-center gap-x-4 p-6">
                             {Array.from({ length: count }).map((_, index) => (
                                 <button
                                     onClick={() => api?.scrollTo(index)}
                                     className={cn(
-                                        "h-2 w-2 rounded-full border-2 border-muted-foreground/50",
+                                        "h-4 w-4 rounded-full border-2 border-muted-foreground/50",
                                         index === current - 1 &&
                                             "bg-muted-foreground"
                                     )}
-                                    aria-label={`View image ${index + 1}`}
+                                    aria-label={`View image ${index + 1} of ${count}`}
                                     key={index}
                                 />
                             ))}
