@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="flex justify-between border-t border-muted-foreground/25 p-4">
+        <footer className="flex flex-col items-end justify-between gap-4 border-t border-muted-foreground/25 p-4 sm:flex-row sm:items-center">
             <ul className="flex gap-4">
                 <li>
                     <a
@@ -55,7 +55,7 @@ export default function Footer() {
                 </li>
             </ul>
             <p className="font-light text-muted-foreground">
-                Made by Toh Hong Xiang, 2024
+                Toh Hong Xiang, 2024
             </p>
         </footer>
     );
