@@ -74,6 +74,7 @@
     ],
 
     "rules": {
-        "react/prop-types": [2, { "ignore": ["className", "variant", "size"] }] // https://github.com/shadcn-ui/ui/issues/1013
+        "react/prop-types": [2, { "ignore": ["className", "variant", "size"] }], // https://github.com/shadcn-ui/ui/issues/1013
+        "react/no-unknown-property": ["error", { "ignore": ["fetchpriority"] }]
     }
 }
