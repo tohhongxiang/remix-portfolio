@@ -86,18 +86,38 @@ export default function HeroSection() {
                 >
                     <LightDarkVariant
                         light={
-                            <img
-                                src="/images/hero.png"
-                                alt=""
-                                className="mx-auto h-auto w-[300px]"
-                            />
+                            <picture>
+                                <source
+                                    type="image/avif"
+                                    srcSet="/images/hero.avif"
+                                />
+                                <source
+                                    type="image/webp"
+                                    srcSet="/images/hero.webp"
+                                />
+                                <img
+                                    alt=""
+                                    src="/images/hero.png"
+                                    className="mx-auto h-auto w-[300px]"
+                                />
+                            </picture>
                         }
                         dark={
-                            <img
-                                src="/images/hero-dark.png"
-                                alt=""
-                                className="mx-auto -mb-12 h-auto w-[300px]" // negative bottom margin to account for height difference
-                            />
+                            <picture>
+                                <source
+                                    type="image/avif"
+                                    srcSet="/images/hero-dark.avif"
+                                />
+                                <source
+                                    type="image/webp"
+                                    srcSet="/images/hero-dark.webp"
+                                />
+                                <img
+                                    src="/images/hero-dark.png"
+                                    alt=""
+                                    className="mx-auto -mb-12 h-auto w-[300px]"
+                                />
+                            </picture>
                         }
                     />
                 </motion.div>
