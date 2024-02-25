@@ -41,7 +41,7 @@ export default function Experience() {
                             className="cursor-pointer"
                         >
                             <span>View Full Resume</span>
-                            <ChevronRight className="ml-2 h-4 w-4 transition duration-150 group-hover:translate-x-1" />
+                            <ChevronRight className="ml-2 h-4 w-4 transition duration-150 group-focus-within:translate-x-1 group-hover:translate-x-1" />
                         </a>
                     </Button>
                 </div>
