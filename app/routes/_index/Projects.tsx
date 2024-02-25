@@ -72,6 +72,7 @@ function ProjectCard({
                 <img
                     src={image}
                     alt={""}
+                    loading="lazy"
                     className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105 group-hover/card:scale-105"
                 />
             </div>
