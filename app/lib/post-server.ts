@@ -20,19 +20,21 @@ export type ProjectFrontMatter = {
  * @returns
  */
 export async function getProject(directory: string, slug: string) {
-    const filePath = path.join(process.cwd(), "app", directory, slug + ".md");
+    const projectDirectory = path.join(process.cwd(), "app", directory);
+    const projectFilePath = path.join(projectDirectory, slug + ".md");
 
-    const [source] = await Promise.all([readFile(filePath, "utf-8")]);
+    const [source] = await Promise.all([readFile(projectFilePath, "utf-8")]);
 
     // Dyamically import all the rehype/remark plugins we are using
-    const [rehypeHighlight, remarkGfm] = await Promise.all([
+    const [rehypeHighlight, remarkGfm, remarkMdxImages] = await Promise.all([
         import("rehype-highlight").then((mod) => mod.default),
         import("remark-gfm").then((mod) => mod.default),
+        import("remark-mdx-images").then((mod) => mod.default),
     ]);
 
     const post = await bundleMDX<ProjectFrontMatter>({
         source,
-        cwd: process.cwd(),
+        cwd: projectDirectory,
 
         esbuildOptions: (options) => {
             // Configuration to allow image loading
@@ -40,6 +42,8 @@ export async function getProject(directory: string, slug: string) {
             options.loader = {
                 ...options.loader,
                 ".png": "dataurl",
+                ".jpeg": "dataurl",
+                ".jpg": "dataurl",
                 ".gif": "dataurl",
             };
 
@@ -49,6 +53,7 @@ export async function getProject(directory: string, slug: string) {
             options.remarkPlugins = [
                 ...(options.remarkPlugins ?? []),
                 remarkGfm,
+                remarkMdxImages,
             ];
             options.rehypePlugins = [
                 ...(options.rehypePlugins ?? []),
@@ -74,9 +79,11 @@ export async function getProject(directory: string, slug: string) {
 export async function getProjects(directory: string) {
     const filePath = path.join(process.cwd(), "app", directory);
 
-    const postsPath = await readdir(filePath, {
-        withFileTypes: true,
-    });
+    const postsPath = (
+        await readdir(filePath, {
+            withFileTypes: true,
+        })
+    ).filter((postPath) => path.extname(postPath.name).toLowerCase() === ".md");
 
     const posts = await Promise.all(
         postsPath.map(async (dirent) => {

@@ -6,7 +6,7 @@ detailedDescription: A responsive file-based blog created using NextJS 12 and Ta
 githubLink: https://github.com/tohhongxiang123/Blog
 demoLink: https://personalblog-nine.vercel.app/
 screenshots: [https://github.com/tohhongxiang123/Blog/blob/main/screenshots/notes_page.png?raw=true, https://github.com/tohhongxiang123/Blog/blob/main/screenshots/note_page.png?raw=true, https://github.com/tohhongxiang123/Blog/blob/main/screenshots/notes_with_code_highlighting.png?raw=true, https://github.com/tohhongxiang123/Blog/blob/main/screenshots/portfolio_page.png?raw=true]
-date: Dec 2023
+date: Jan 2024
 ---
 
 This NextJS blog application leverages a file-based content management system (CMS) for efficient content organization and management. With NextJS as the framework of choice, the application ensures high performance and scalability, ideal for handling a growing library of blog posts.
