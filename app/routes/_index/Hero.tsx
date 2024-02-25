@@ -99,6 +99,8 @@ export default function HeroSection() {
                                     alt=""
                                     src="/images/hero.png"
                                     className="mx-auto h-auto w-[300px]"
+                                    // eslint-disable-next-line react/no-unknown-property
+                                    fetchpriority="high"
                                 />
                             </picture>
                         }
@@ -116,6 +118,8 @@ export default function HeroSection() {
                                     src="/images/hero-dark.png"
                                     alt=""
                                     className="mx-auto -mb-12 h-auto w-[300px]"
+                                    // eslint-disable-next-line react/no-unknown-property
+                                    fetchpriority="high"
                                 />
                             </picture>
                         }
