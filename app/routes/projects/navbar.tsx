@@ -17,16 +17,16 @@ export default function Navbar() {
                 <LightDarkVariant
                     light={
                         <img
-                            src="/images/hero.png"
+                            src="/images/navbar-logo.png"
                             alt=""
-                            className="h-auto w-8"
+                            className="h-8 w-8 object-contain"
                         />
                     }
                     dark={
                         <img
-                            src="/images/hero-dark.png"
+                            src="/images/navbar-logo-dark.png"
                             alt=""
-                            className="h-auto w-8" // negative bottom margin to account for height difference
+                            className="h-8 w-8 object-contain" // negative bottom margin to account for height difference
                         />
                     }
                 />

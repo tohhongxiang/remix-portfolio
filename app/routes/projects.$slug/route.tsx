@@ -17,8 +17,13 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
         {
             title: data?.frontmatter.title
                 ? `${data.frontmatter.title} | THX`
-                : "Untitled",
-            description: data?.frontmatter.description ?? "",
+                : "THX",
+        },
+        {
+            name: "description",
+            content:
+                data?.frontmatter.description ??
+                `Detailed write-up for project: ${data?.frontmatter.title}`,
         },
     ];
 };
@@ -100,12 +105,13 @@ export default function SpecificProjectRoute() {
                 style={{ viewTransitionName: `${slug}-cover-image` }}
             >
                 {[frontmatter.cover, ...frontmatter.screenshots].map(
-                    (image) => (
+                    (image, index) => (
                         <ImageCarousel.Item key={image}>
                             <img
                                 src={image}
                                 alt=""
                                 className="h-full w-full rounded-md object-contain"
+                                loading={index === 0 ? "eager" : "lazy"}
                             />
                         </ImageCarousel.Item>
                     )
