@@ -119,6 +119,7 @@ export default function SpecificProjectRoute() {
 
 export function ErrorBoundary() {
     const error = useRouteError();
+    const b = 1;
 
     return (
         <div className="flex min-h-full flex-col items-center justify-start p-6">
