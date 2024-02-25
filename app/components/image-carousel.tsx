@@ -58,6 +58,7 @@ export default function ImageCarousel({
                                         index === current - 1 &&
                                             "bg-muted-foreground"
                                     )}
+                                    aria-label={`View image ${index + 1}`}
                                     key={index}
                                 />
                             ))}
