@@ -12,8 +12,8 @@ export const meta: MetaFunction = () => {
     return [
         { title: "Toh Hong Xiang" },
         {
-            name: "Portfolio for Toh Hong Xiang",
-            content: "I'm a web developer!",
+            name: "description",
+            content: "Portfolio showcase for Toh Hong Xiang",
         },
     ];
 };
