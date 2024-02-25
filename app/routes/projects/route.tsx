@@ -6,10 +6,12 @@ export default function Projects() {
     return (
         <>
             <Navbar />
-            <div className="mt-4">
-                <Outlet />
+            <div className="flex h-full flex-col pt-16">
+                <div className="flex-1">
+                    <Outlet />
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </>
     );
 }

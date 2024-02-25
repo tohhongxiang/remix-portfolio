@@ -1,9 +1,14 @@
 import { LoaderFunctionArgs, json } from "@remix-run/node";
-import { MetaFunction, useLoaderData } from "@remix-run/react";
+import {
+    MetaFunction,
+    isRouteErrorResponse,
+    useLoaderData,
+    useRouteError,
+} from "@remix-run/react";
 import { getProject } from "~/lib/post-server";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
-import { LucideLink } from "lucide-react";
+import { Info, LucideLink } from "lucide-react";
 import ImageCarousel from "~/components/image-carousel";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -19,12 +24,12 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
     const slug = params.slug;
-    if (!slug) throw new Response("Not found", { status: 404 });
+    if (!slug) throw new Response(`Slug required!`, { status: 404 });
 
     const post = await getProject("projects", slug);
 
     if (!post) {
-        throw new Response("Not found", { status: 404 });
+        throw new Response(`Not found: ${slug}`, { status: 404 });
     }
 
     const { frontmatter, code } = post;
@@ -107,6 +112,46 @@ export default function SpecificProjectRoute() {
             </ImageCarousel>
             <div className="prose mx-auto py-16 dark:prose-invert">
                 <Component />
+            </div>
+        </div>
+    );
+}
+
+export function ErrorBoundary() {
+    const error = useRouteError();
+
+    return (
+        <div className="flex min-h-full flex-col items-center justify-start p-6">
+            <div className="max-w-prose rounded-md bg-red-500 p-4 dark:bg-red-700">
+                {isRouteErrorResponse(error) ? (
+                    <>
+                        <h1 className="mb-4 flex items-center text-xl font-bold uppercase tracking-wide text-slate-100">
+                            <Info />
+                            <span className="ml-2">
+                                {error.status} {error.statusText}
+                            </span>
+                        </h1>
+                        <p className="text-slate-200">{error.data}</p>
+                    </>
+                ) : error instanceof Error ? (
+                    <>
+                        <h1 className="mb-4 flex items-center text-xl font-bold uppercase tracking-wide text-slate-100">
+                            <Info />
+                            <span className="ml-2">Error!</span>
+                        </h1>
+                        <p className="text-slate-200">{error.message}</p>
+                    </>
+                ) : (
+                    <>
+                        <h1 className="mb-4 flex items-center text-xl font-bold uppercase tracking-wide text-slate-100">
+                            <Info />
+                            <span className="ml-2">Error!</span>
+                        </h1>
+                        <p className="text-slate-200">
+                            An unexpected error has occurred
+                        </p>
+                    </>
+                )}
             </div>
         </div>
     );
