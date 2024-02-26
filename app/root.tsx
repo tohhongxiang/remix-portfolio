@@ -29,20 +29,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: tailwindStyles },
-    {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-        crossOrigin: "anonymous",
-    },
-    {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossOrigin: "anonymous",
-    },
-    {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap",
-    },
     ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
