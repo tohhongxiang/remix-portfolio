@@ -105,7 +105,7 @@ export default function HeroSection() {
                                     <img
                                         alt=""
                                         src="/images/hero.png"
-                                        className="mx-auto h-auto w-[300px]"
+                                        className="mx-auto h-[300px] w-[300px] object-contain"
                                         fetchpriority="high"
                                     />
                                 </picture>
@@ -123,7 +123,7 @@ export default function HeroSection() {
                                     <img
                                         src="/images/hero-dark.png"
                                         alt=""
-                                        className="mx-auto -mb-12 h-auto w-[300px]"
+                                        className="mx-auto -mb-6 h-[300px] w-[300px] object-contain"
                                         fetchpriority="high"
                                     />
                                 </picture>
