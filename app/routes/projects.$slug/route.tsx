@@ -44,6 +44,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
 export default function SpecificProjectRoute() {
     const { code, frontmatter, slug } = useLoaderData<typeof loader>();
+
     const Component = useMemo(() => getMDXComponent(code), [code]);
 
     return (
@@ -110,7 +111,7 @@ export default function SpecificProjectRoute() {
                             <img
                                 src={image}
                                 alt=""
-                                className="h-full w-full rounded-md object-contain"
+                                className="aspect-video h-full w-full rounded-md object-contain"
                                 loading={index === 0 ? "eager" : "lazy"}
                             />
                         </ImageCarousel.Item>

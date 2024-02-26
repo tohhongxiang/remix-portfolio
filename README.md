@@ -40,7 +40,15 @@ Update the domain within `sessions.server.ts`, and then push to github. Vercel w
 
 ## Optimisations
 
-After the website was mostly complete, I ran the Lighthouse Audit on the webpage. All audits were done in Incognito, without extensions enabled to prevent any external factors. The results were as follows:
+After the website was mostly complete, I ran the Lighthouse Audit on the webpage using the following options:
+
+| Section    | Value                                           |
+| ---------- | ----------------------------------------------- |
+| Mode       | Navigation                                      |
+| Device     | Mobile                                          |
+| Categories | Performance, Accessibility, Best practices, SEO |
+
+The results were as follows:
 
 ![](screenshots/initial-lighthouse.png)
 
@@ -89,6 +97,12 @@ This improved the lighthouse scores to 100 except for performance. Now to tackle
   - Due to images taking some time to load, and then pushing the other elements away. This was solved by giving an explicit width and height to the images
 - Avoid enormous network payloads
   - Images below the fold were being loaded, causing the bandwidth to be very high. Solved by giving `<img loading="lazy" />`
+- Reduce unused Javascript
+  - Converted `motion` components in Framer Motion to use `m` and `LazyMotion` as per their [tutorial to reduce bundle size](https://www.framer.com/motion/guide-reduce-bundle-size/)
+
+All these improvements gave the following result:
+
+![](screenshots/final-lighthouse-score.png)
 
 ## Resources
 
