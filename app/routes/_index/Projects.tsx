@@ -27,7 +27,7 @@ export default function Projects({ projects }: ProjectProps) {
                 <ul className="group pointer-events-none flex flex-col gap-y-12 px-3">
                     {projects.map((project) => (
                         <li key={project.title}>
-                            <div className="pointer-events-auto -mx-3 rounded px-3 py-6 transition duration-150 group-hover:opacity-75 group-hover:hover:bg-slate-200/50 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/50">
+                            <div className="">
                                 <ProjectCard
                                     title={project.title}
                                     cover={project.cover}
@@ -60,7 +60,7 @@ function ProjectCard({
     const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion)");
 
     return (
-        <div className="group/card relative flex flex-col gap-6 sm:flex-row">
+        <div className="group/card pointer-events-auto relative -mx-3 flex flex-col gap-6 rounded px-3 py-6 transition duration-150 group-hover:opacity-75 group-hover:hover:bg-slate-200/50 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/50 sm:flex-row">
             <div
                 className="h-40 overflow-hidden rounded-md focus-within:border-2 focus-within:border-foreground focus-within:active:border-0 sm:h-32 sm:w-64"
                 style={{
