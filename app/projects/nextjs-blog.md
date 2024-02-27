@@ -1,6 +1,6 @@
 ---
 title: NextJS Blog
-cover: https://github.com/tohhongxiang123/Blog/blob/4d49f51a17b3ef5c12607a8ba264f2ebb2b2ee78/screenshots/main_page.png?raw=true
+thumbnail: /project_screenshots/nextjs-blog/thumbnail.jpg
 description: Blog/Portfolio website created with NextJS and Tailwind
 detailedDescription: A responsive file-based blog created using NextJS 12 and TailwindCSS. Posts and notes are written with markdown, including LaTeX support.
 githubLink: https://github.com/tohhongxiang123/Blog

@@ -1,6 +1,6 @@
 ---
 title: Rechaptca
-cover: https://github.com/tohhongxiang123/rechaptca/blob/master/screenshots/cover.png?raw=true
+thumbnail: /project_screenshots/rechaptca/thumbnail.jpg
 description: A challenging captcha-solving game for everyone
 detailedDescription: '"Rechaptca" challenges players with a series of captivating, tricky, and downright difficult captchas. With varying time limits, reactions, and general knowledge tests, the game promises an entertaining experience for all!'
 githubLink: https://github.com/tohhongxiang123/rechaptca

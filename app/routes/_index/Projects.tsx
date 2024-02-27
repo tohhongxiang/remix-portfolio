@@ -6,7 +6,7 @@ import { useMediaQuery } from "usehooks-ts";
 interface Project {
     slug: string;
     title: string;
-    cover: string;
+    thumbnail: string;
     description: string;
     detailedDescription: string;
     githubLink: string;
@@ -30,7 +30,7 @@ export default function Projects({ projects }: ProjectProps) {
                             <div className="">
                                 <ProjectCard
                                     title={project.title}
-                                    cover={project.cover}
+                                    thumbnail={project.thumbnail}
                                     description={project.description}
                                     detailedDescription={
                                         project.detailedDescription
@@ -51,7 +51,7 @@ export default function Projects({ projects }: ProjectProps) {
 function ProjectCard({
     slug,
     title,
-    cover: image,
+    thumbnail,
     description,
     detailedDescription,
     githubLink,
@@ -70,7 +70,7 @@ function ProjectCard({
                 }}
             >
                 <img
-                    src={image}
+                    src={thumbnail}
                     alt={""}
                     loading="lazy"
                     className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105 group-hover/card:scale-105"

@@ -6,7 +6,7 @@ import { bundleMDX } from "./mdx.server";
 export type ProjectFrontMatter = {
     title: string;
     description: string;
-    cover: string;
+    thumbnail: string;
     detailedDescription: string;
     screenshots?: string[];
     githubLink: string;

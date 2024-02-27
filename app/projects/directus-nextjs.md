@@ -1,6 +1,6 @@
 ---
 title: "NextJS Directus E-Commerce Website"
-cover: https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/main_page.png?raw=true
+thumbnail: /project_screenshots/directus-nextjs/thumbnail.jpg
 description: A fully-featured e-commerce platform with Directus and NextJS
 detailedDescription: This is a fully-fledged E-commerce template built using NextJS, Directus and Snipcart. It includes a CMS to provide sellers with a smooth and intuitive experience to manage their products.
 githubLink: https://github.com/tohhongxiang123/directus-nextjs
