@@ -187,6 +187,7 @@ export default function HeroSection() {
                                     .getElementById("about")
                                     ?.scrollIntoView({ behavior: "smooth" })
                             }
+                            aria-label="Go to About Me section"
                         >
                             <span>About Me</span>
                         </Button>
@@ -200,6 +201,7 @@ export default function HeroSection() {
                                     .getElementById("projects")
                                     ?.scrollIntoView({ behavior: "smooth" })
                             }
+                            aria-label="Go to Projects section"
                         >
                             <span>Projects</span>
                             <ChevronDown className="ml-2 h-4 w-4" />
