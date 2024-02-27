@@ -23,8 +23,6 @@ export async function getProject(directory: string, slug: string) {
     const projectDirectory = path.join(process.cwd(), "app", directory);
     const projectFilePath = path.join(projectDirectory, slug + ".md");
 
-    const [source] = await Promise.all([readFile(projectFilePath, "utf-8")]);
-
     // Dyamically import all the rehype/remark plugins we are using
     const [rehypePrettyCode, remarkGfm, remarkMdxImages] = await Promise.all([
         import("rehype-pretty-code").then((mod) => mod.default),
@@ -33,9 +31,8 @@ export async function getProject(directory: string, slug: string) {
     ]);
 
     const post = await bundleMDX<ProjectFrontMatter>({
-        source,
+        file: projectFilePath,
         cwd: projectDirectory,
-
         esbuildOptions: (options) => {
             // Configuration to allow image loading
             // https://github.com/kentcdodds/mdx-bundler#image-bundling

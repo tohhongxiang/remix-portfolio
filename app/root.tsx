@@ -60,7 +60,7 @@ export function App() {
                 <Links />
             </head>
             <body className="relative bg-background">
-                <div className="fixed right-2 top-2 z-[99999]">
+                <div className="fixed right-2 top-2 z-30">
                     <ModeToggle />
                 </div>
                 <Outlet />

@@ -8,6 +8,16 @@ import {
     Carousel,
     CarouselItem,
 } from "./ui/carousel";
+import {
+    Dialog,
+    DialogTrigger,
+    DialogContent,
+    DialogHeader,
+    DialogFooter,
+    DialogTitle,
+} from "./ui/dialog";
+import { Button } from "./ui/button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface ImageCarouselProps
     extends React.DetailedHTMLProps<
@@ -45,7 +55,50 @@ export default function ImageCarousel({
                 setApi={setApi}
                 opts={{ loop: true, containScroll: "trimSnaps" }}
             >
-                <CarouselContent>{children}</CarouselContent>
+                <Dialog>
+                    <DialogTrigger aria-label="Open image in a modal">
+                        <CarouselContent>{children}</CarouselContent>
+                    </DialogTrigger>
+                    <DialogContent className="max-h-screen max-w-screen-xl">
+                        <DialogHeader>
+                            <DialogTitle>
+                                <span className="sr-only">
+                                    Viewing project screenshots:
+                                </span>{" "}
+                                Slide {current} of {count}
+                            </DialogTitle>
+                        </DialogHeader>
+                        <div className="-ml-4 flex shrink items-center justify-center">
+                            {children instanceof Array
+                                ? children[current - 1]
+                                : children}
+                        </div>
+                        <DialogFooter className="flex flex-row justify-between space-x-2 sm:justify-end">
+                            <Button
+                                type="button"
+                                variant="secondary"
+                                onClick={() => api?.scrollPrev()}
+                                aria-label="Go to previous slide"
+                            >
+                                <ArrowLeft className="h-4 w-4" />
+                                <span className="ml-2 hidden sm:inline">
+                                    Previous
+                                </span>
+                            </Button>
+                            <Button
+                                type="button"
+                                variant="secondary"
+                                onClick={() => api?.scrollNext()}
+                                aria-label="Go to next slide"
+                            >
+                                <span className="mr-2 hidden sm:inline">
+                                    Next
+                                </span>
+                                <ArrowRight className="h-4 w-4" />
+                            </Button>
+                        </DialogFooter>
+                    </DialogContent>
+                </Dialog>
                 {hasMoreThanOneSlide ? (
                     <div
                         className="relative flex items-center justify-center"
