@@ -1,6 +1,6 @@
 import { Button } from "~/components/ui/button";
-import { Link } from "@remix-run/react";
-import { ArrowRight, Link as LucideLink } from "lucide-react";
+import { Link, useNavigation } from "@remix-run/react";
+import { ArrowRight, Loader2, Link as LucideLink } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
 
 interface Project {
@@ -59,6 +59,12 @@ function ProjectCard({
 }: Project) {
     const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion)");
 
+    const navigation = useNavigation();
+
+    const isNavigatingToThisProject =
+        navigation.state === "loading" &&
+        navigation.location?.pathname === `/projects/${slug}`;
+
     return (
         <div className="group/card pointer-events-auto relative -mx-3 flex flex-col gap-6 rounded px-3 py-6 transition duration-150 group-hover:opacity-75 group-hover:hover:bg-slate-200/50 group-hover:hover:opacity-100 dark:group-hover:hover:bg-slate-800/50 sm:flex-row">
             <div
@@ -99,7 +105,6 @@ function ProjectCard({
                         className="z-20 w-full rounded-none rounded-l-md outline-none"
                         variant="outline"
                         asChild
-                        onClick={(e) => e.stopPropagation()}
                     >
                         <a
                             href={githubLink}
@@ -127,7 +132,6 @@ function ProjectCard({
                             className="z-20 w-full rounded-none"
                             variant="outline"
                             asChild
-                            onClick={(e) => e.stopPropagation()}
                         >
                             <a
                                 href={demoLink}
@@ -146,6 +150,7 @@ function ProjectCard({
                         className="z-20 w-full rounded-none rounded-r-md"
                         asChild
                         onClick={(e) => e.stopPropagation()}
+                        disabled={isNavigatingToThisProject}
                     >
                         <Link
                             to={`/projects/${slug}`}
@@ -153,10 +158,16 @@ function ProjectCard({
                             prefetch="intent"
                             aria-label={`Read more about ${title}`}
                         >
-                            <span className="mr-2 hidden sm:inline">
-                                Details
-                            </span>
-                            <ArrowRight className="h-4 w-4" />
+                            {isNavigatingToThisProject ? (
+                                <Loader2 className="animate-spin" />
+                            ) : (
+                                <>
+                                    <span className="mr-2 hidden sm:inline">
+                                        Details
+                                    </span>
+                                    <ArrowRight className="h-4 w-4" />
+                                </>
+                            )}
                         </Link>
                     </Button>
                 </div>
