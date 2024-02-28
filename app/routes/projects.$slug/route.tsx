@@ -5,7 +5,7 @@ import {
     useLoaderData,
     useRouteError,
 } from "@remix-run/react";
-import { getProject } from "~/lib/post-server";
+import { getProject } from "~/lib/post.server";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
 import { Info, LucideLink } from "lucide-react";
@@ -105,16 +105,18 @@ export default function SpecificProjectRoute() {
                 className="mx-auto max-w-[80ch]"
                 style={{ viewTransitionName: `${slug}-cover-image` }}
             >
-                {frontmatter.screenshots.map((image, index) => (
-                    <ImageCarousel.Item key={image}>
-                        <img
-                            src={image}
-                            alt=""
-                            className="aspect-video h-full w-full rounded-md object-contain"
-                            loading={index === 0 ? "eager" : "lazy"}
-                        />
-                    </ImageCarousel.Item>
-                ))}
+                {[frontmatter.thumbnail, ...frontmatter.screenshots].map(
+                    (image, index) => (
+                        <ImageCarousel.Item key={image}>
+                            <img
+                                src={image}
+                                alt=""
+                                className="aspect-video h-full w-full rounded-md object-contain"
+                                loading={index === 0 ? "eager" : "lazy"}
+                            />
+                        </ImageCarousel.Item>
+                    )
+                )}
             </ImageCarousel>
             <div className="prose mx-auto py-16 dark:prose-invert">
                 <Component components={{ pre: CustomCodeBlock }} />

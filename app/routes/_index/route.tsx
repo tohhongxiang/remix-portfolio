@@ -2,7 +2,7 @@ import { json, type LoaderFunction, type MetaFunction } from "@remix-run/node";
 import HeroSection from "./Hero";
 import Projects from "./Projects";
 import { useLoaderData } from "@remix-run/react";
-import { getProjects } from "~/lib/post-server";
+import { getProjects } from "~/lib/post.server";
 import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
