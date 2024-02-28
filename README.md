@@ -24,13 +24,15 @@ npm run dev
 Projects are stored as `.md` files within `app/projects`. Each project should include in the frontmatter:
 
 -   `title`: Title of the project
--   `cover`: Cover image link of the project
+-   `thumbnail`: Thumbnail image link of the project (width of 300px)
 -   `description`: A short, one-line description about the project
 -   `detailedDescription`: A short paragraph describing the project
 -   `githubLink`: Link to github repository of the project
 -   `demoLink` (optional): Link to a demo website showcasing the project
--   `screenshots`: An array of links to images for the project
+-   `screenshots`: An array of links to images for the project (width of 1280px)
 -   `date`: The date of the project (used to sort)
+
+Use [Squoosh](https://squoosh.app/) to optimize images.
 
 ## Deployment
 
