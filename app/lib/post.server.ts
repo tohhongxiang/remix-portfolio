@@ -1,6 +1,6 @@
 import parseFrontMatter from "front-matter";
 import { readFile, readdir } from "./fs.server";
-import path from "path";
+import { join, extname } from "path";
 import { bundleMDX } from "./mdx.server";
 
 export type ProjectFrontMatter = {
@@ -20,8 +20,8 @@ export type ProjectFrontMatter = {
  * @returns
  */
 export async function getProject(directory: string, slug: string) {
-    const projectDirectory = path.join(process.cwd(), "app", directory);
-    const projectFilePath = path.join(projectDirectory, slug + ".md");
+    const projectDirectory = join(process.cwd(), "app", directory);
+    const projectFilePath = join(projectDirectory, slug + ".md");
 
     // Dyamically import all the rehype/remark plugins we are using
     const [rehypePrettyCode, remarkGfm, remarkMdxImages] = await Promise.all([
@@ -74,17 +74,17 @@ export async function getProject(directory: string, slug: string) {
  * @returns
  */
 export async function getProjects(directory: string) {
-    const filePath = path.join(process.cwd(), "app", directory);
+    const filePath = join(process.cwd(), "app", directory);
 
     const postsPath = (
         await readdir(filePath, {
             withFileTypes: true,
         })
-    ).filter((postPath) => path.extname(postPath.name).toLowerCase() === ".md");
+    ).filter((postPath) => extname(postPath.name).toLowerCase() === ".md");
 
     const posts = await Promise.all(
         postsPath.map(async (dirent) => {
-            const fPath = path.join(filePath, dirent.name);
+            const fPath = join(filePath, dirent.name);
             const [file] = await Promise.all([readFile(fPath)]);
             const frontmatter = parseFrontMatter(file.toString());
             const attributes = frontmatter.attributes as ProjectFrontMatter;
