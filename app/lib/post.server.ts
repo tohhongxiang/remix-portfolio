@@ -76,16 +76,17 @@ export async function getProject(directory: string, slug: string) {
 export async function getProjects(directory: string) {
     const filePath = join(process.cwd(), "app", directory);
 
-    const postsPath = (
-        await readdir(filePath, {
-            withFileTypes: true,
-        })
-    ).filter((postPath) => extname(postPath.name).toLowerCase() === ".md");
+    const postsPath = await readdir(filePath, { withFileTypes: true }).then(
+        (postPaths) =>
+            postPaths.filter(
+                (postPath) => extname(postPath.name).toLowerCase() === ".md"
+            )
+    );
 
     const posts = await Promise.all(
         postsPath.map(async (dirent) => {
             const fPath = join(filePath, dirent.name);
-            const [file] = await Promise.all([readFile(fPath)]);
+            const file = await readFile(fPath);
             const frontmatter = parseFrontMatter(file.toString());
             const attributes = frontmatter.attributes as ProjectFrontMatter;
 
