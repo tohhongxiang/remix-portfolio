@@ -123,7 +123,7 @@ export default function HeroSection() {
                                     <img
                                         src="/images/hero-dark.png"
                                         alt=""
-                                        className="mx-auto -mb-6 h-[300px] w-[300px] object-contain"
+                                        className="mx-auto mb-6 h-[300px] w-[300px] object-contain"
                                         fetchpriority="high"
                                     />
                                 </picture>
