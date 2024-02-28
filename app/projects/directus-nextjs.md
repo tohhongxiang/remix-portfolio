@@ -6,10 +6,10 @@ detailedDescription: This is a fully-fledged E-commerce template built using Nex
 githubLink: https://github.com/tohhongxiang123/directus-nextjs
 screenshots:
     [
-        https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/open_cart_page.png?raw=true,
-        https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/products_page.png?raw=true,
-        https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/product_page.png?raw=true,
-        https://github.com/tohhongxiang123/directus-nextjs/blob/master/screenshots/directus_product_page.png?raw=true,
+        /project_screenshots/directus-nextjs/image-1.jpg,
+        /project_screenshots/directus-nextjs/image-2.jpg,
+        /project_screenshots/directus-nextjs/image-3.jpg,
+        /project_screenshots/directus-nextjs/image-4.jpg,
     ]
 date: June 2023
 ---

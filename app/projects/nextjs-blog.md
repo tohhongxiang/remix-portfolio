@@ -7,10 +7,10 @@ githubLink: https://github.com/tohhongxiang123/Blog
 demoLink: https://personalblog-nine.vercel.app/
 screenshots:
     [
-        https://github.com/tohhongxiang123/Blog/blob/main/screenshots/notes_page.png?raw=true,
-        https://github.com/tohhongxiang123/Blog/blob/main/screenshots/note_page.png?raw=true,
-        https://github.com/tohhongxiang123/Blog/blob/main/screenshots/notes_with_code_highlighting.png?raw=true,
-        https://github.com/tohhongxiang123/Blog/blob/main/screenshots/portfolio_page.png?raw=true,
+        /project_screenshots/nextjs-blog/image-1.jpg,
+        /project_screenshots/nextjs-blog/image-2.jpg,
+        /project_screenshots/nextjs-blog/image-3.jpg,
+        /project_screenshots/nextjs-blog/image-4.jpg,
     ]
 date: Jan 2024
 ---

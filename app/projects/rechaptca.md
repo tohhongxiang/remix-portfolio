@@ -7,8 +7,10 @@ githubLink: https://github.com/tohhongxiang123/rechaptca
 demoLink: https://tohhongxiang123.github.io/rechaptca/
 screenshots:
     [
-        https://github.com/tohhongxiang123/rechaptca/blob/master/screenshots/landing-page.png?raw=true,
-        https://github.com/tohhongxiang123/rechaptca/blob/master/screenshots/challenge-1.png?raw=true,
+        /project_screenshots/rechaptca/image-1.jpg,
+        /project_screenshots/rechaptca/image-2.jpg,
+        /project_screenshots/rechaptca/image-3.jpg,
+        /project_screenshots/rechaptca/image-4.jpg,
     ]
 date: Jan 2024
 ---
