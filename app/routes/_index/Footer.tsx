@@ -2,7 +2,7 @@ import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="flex justify-between border-t border-muted-foreground/25 p-4">
+        <footer className="flex flex-col gap-4 border-t border-muted-foreground/25 p-4 sm:flex-row sm:justify-between">
             <ul className="flex gap-4">
                 <li>
                     <a
@@ -58,10 +58,10 @@ export default function Footer() {
             </ul>
             <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="hover:text-underline group flex items-center text-muted-foreground hover:text-foreground"
+                className="hover:text-underline group flex flex-row items-center gap-2 text-muted-foreground hover:text-foreground sm:flex-row-reverse"
             >
+                <span>Back to top</span>
                 <ArrowUp className="h-4 w-4 opacity-0 transition-all duration-150 group-focus-within:animate-bounce group-focus-within:opacity-100 group-hover:animate-bounce group-hover:opacity-100 motion-reduce:group-focus-within:animate-none motion-reduce:group-hover:animate-none" />
-                <span className="ml-2">Back to top</span>
             </button>
         </footer>
     );
