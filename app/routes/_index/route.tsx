@@ -20,6 +20,10 @@ export const meta: MetaFunction = () => {
             property: "og:image",
             content: OGImage,
         },
+        {
+            name: "twitter:card",
+            content: "summary_large_image",
+        },
     ];
 };
 
