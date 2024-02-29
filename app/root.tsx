@@ -4,6 +4,7 @@ import {
     Links,
     LiveReload,
     Meta,
+    MetaFunction,
     Outlet,
     Scripts,
     ScrollRestoration,
@@ -19,6 +20,37 @@ import {
 import { themeSessionResolver } from "./sessions.server";
 import { ModeToggle } from "./components/mode-toggle";
 import { SpeedInsights } from "@vercel/speed-insights/remix";
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Toh Hong Xiang" },
+        {
+            name: "description",
+            content: "Learn more about me in my Portfolio!",
+        },
+
+        // facebook meta tags
+        {
+            property: "og:type",
+            content: "website",
+        },
+        {
+            property: "og:image",
+            content:
+                "https://github.com/tohhongxiang123/remix-portfolio/blob/master/public/images/og.png?raw=true",
+        },
+
+        // twitter meta tags
+        {
+            name: "twitter:card",
+            content: "summary_large_image",
+        },
+        {
+            name: "twitter:image",
+            content:
+                "https://github.com/tohhongxiang123/remix-portfolio/blob/master/public/images/og.png?raw=true",
+        },
+    ];
+};
 
 // Return the theme from the session storage using the loader
 export async function loader({ request }: LoaderFunctionArgs) {

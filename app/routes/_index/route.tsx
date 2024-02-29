@@ -1,4 +1,4 @@
-import { json, type LoaderFunction, type MetaFunction } from "@remix-run/node";
+import { json, type LoaderFunction } from "@remix-run/node";
 import HeroSection from "./Hero";
 import Projects from "./Projects";
 import { useLoaderData } from "@remix-run/react";
@@ -7,29 +7,6 @@ import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Footer from "./Footer";
-import OGImage from "~/../public/images/og.png";
-
-export const meta: MetaFunction = () => {
-    return [
-        { title: "Toh Hong Xiang" },
-        {
-            name: "description",
-            content: "Portfolio showcase for Toh Hong Xiang",
-        },
-        {
-            property: "og:image",
-            content: OGImage,
-        },
-        {
-            name: "twitter:card",
-            content: "summary_large_image",
-        },
-        {
-            name: "twitter:image:src",
-            content: OGImage,
-        },
-    ];
-};
 
 export const loader: LoaderFunction = async () => {
     const posts = await getProjects("projects");
