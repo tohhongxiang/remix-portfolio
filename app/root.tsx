@@ -20,7 +20,9 @@ import {
 import { themeSessionResolver } from "./sessions.server";
 import { ModeToggle } from "./components/mode-toggle";
 import { SpeedInsights } from "@vercel/speed-insights/remix";
+
 export const meta: MetaFunction = () => {
+    const ogImage = "https://portfolio-mu-rosy-74.vercel.app/images/og.png";
     return [
         { title: "Toh Hong Xiang" },
         {
@@ -35,8 +37,7 @@ export const meta: MetaFunction = () => {
         },
         {
             property: "og:image",
-            content:
-                "https://github.com/tohhongxiang123/remix-portfolio/blob/master/public/images/og.png?raw=true",
+            content: ogImage,
         },
 
         // twitter meta tags
@@ -46,8 +47,7 @@ export const meta: MetaFunction = () => {
         },
         {
             name: "twitter:image",
-            content:
-                "https://github.com/tohhongxiang123/remix-portfolio/blob/master/public/images/og.png?raw=true",
+            content: ogImage,
         },
     ];
 };
