@@ -106,6 +106,10 @@ All these improvements gave the following result:
 
 ![](screenshots/final-lighthouse-score.png)
 
+## Additional Notes
+
+- Images should be sized exactly so that cached images do not suddenly "snap" into their correct dimensions. This is due to images being cached and loading immediately, then the CSS loading to properly resize the image. 
+
 ## Resources
 
 -   https://blacksheepcode.com/posts/adding_msw_bundler_to_remix_app

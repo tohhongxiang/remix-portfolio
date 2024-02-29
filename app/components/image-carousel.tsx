@@ -47,8 +47,7 @@ export default function ImageCarousel({
         });
     }, [api]);
 
-    const hasMoreThanOneSlide =
-        children instanceof Array && children.length > 1;
+    const numberOfChildren = children instanceof Array ? children.length : 1;
     return (
         <div {...props} className={cn(className)}>
             <Carousel
@@ -74,32 +73,36 @@ export default function ImageCarousel({
                                 : children}
                         </div>
                         <DialogFooter className="flex flex-row justify-between space-x-2 sm:justify-end">
-                            <Button
-                                type="button"
-                                variant="secondary"
-                                onClick={() => api?.scrollPrev()}
-                                aria-label="Go to previous slide"
-                            >
-                                <ArrowLeft className="h-4 w-4" />
-                                <span className="ml-2 hidden sm:inline">
-                                    Previous
-                                </span>
-                            </Button>
-                            <Button
-                                type="button"
-                                variant="secondary"
-                                onClick={() => api?.scrollNext()}
-                                aria-label="Go to next slide"
-                            >
-                                <span className="mr-2 hidden sm:inline">
-                                    Next
-                                </span>
-                                <ArrowRight className="h-4 w-4" />
-                            </Button>
+                            {numberOfChildren > 1 ? (
+                                <>
+                                    <Button
+                                        type="button"
+                                        variant="secondary"
+                                        onClick={() => api?.scrollPrev()}
+                                        aria-label="Go to previous slide"
+                                    >
+                                        <ArrowLeft className="h-4 w-4" />
+                                        <span className="ml-2 hidden sm:inline">
+                                            Previous
+                                        </span>
+                                    </Button>
+                                    <Button
+                                        type="button"
+                                        variant="secondary"
+                                        onClick={() => api?.scrollNext()}
+                                        aria-label="Go to next slide"
+                                    >
+                                        <span className="mr-2 hidden sm:inline">
+                                            Next
+                                        </span>
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Button>
+                                </>
+                            ) : null}
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>
-                {hasMoreThanOneSlide ? (
+                {numberOfChildren > 1 ? (
                     <div
                         className="relative flex items-center justify-center"
                         role="group"
@@ -107,7 +110,12 @@ export default function ImageCarousel({
                     >
                         <CarouselPrevious className="relative left-0 right-0 translate-y-0" />
                         <div className="flex items-center justify-center gap-x-4 p-6">
-                            {Array.from({ length: count }).map((_, index) => (
+                            {Array.from({
+                                length:
+                                    children instanceof Array
+                                        ? children.length
+                                        : 1,
+                            }).map((_, index) => (
                                 <button
                                     onClick={() => api?.scrollTo(index)}
                                     className={cn(
