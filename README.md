@@ -74,6 +74,22 @@ This improved the lighthouse scores to 100 except for performance. Now to tackle
 
   This did not really improve my performance. However, downloading the font and serving it locally improved performance tremendously.
 
+  ```css
+  @font-face {
+      font-family: "Inter";
+      src: local("Inter"), /* important to put local in front if the user already has the font installed locally */
+      url("/fonts/inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+      font-style: normal;
+      font-display: swap;
+  }
+  ```
+
+  Include a `preload` hint in the `root.tsx` file as well:
+
+  ```html
+  <link rel="preload" href="/fonts/inter/Inter-VariableFont_slnt,wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  ```
+
 - Largest Contentful Paint element took a long time to load (hero image)
   - Converted the hero image to `.avif` and `.webp` while keeping the `.png` as a fallback. Not using `.jpeg` due to transparency in the image. Then used a `picture` element to correctly render the image
 
@@ -96,7 +112,7 @@ This improved the lighthouse scores to 100 except for performance. Now to tackle
     </picture>
   ```
 - Large layout shifts
-  - Due to images taking some time to load, and then pushing the other elements away. This was solved by giving an explicit width and height to the images
+  - Due to images taking some time to load, and then pushing the other elements away. This was solved by giving an explicit width and height to the images, or using `aspect-ratio`
 - Avoid enormous network payloads
   - Images below the fold were being loaded, causing the bandwidth to be very high. Solved by giving `<img loading="lazy" />`
 - Reduce unused Javascript

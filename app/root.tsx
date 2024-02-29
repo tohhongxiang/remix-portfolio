@@ -29,6 +29,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: tailwindStyles },
+    {
+        rel: "preload",
+        href: "/fonts/inter/Inter-VariableFont_slnt,wght.ttf",
+        as: "font",
+        type: "font/ttf",
+        crossOrigin: "anonymous",
+    },
     ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
