@@ -24,6 +24,10 @@ export const meta: MetaFunction = () => {
             name: "twitter:card",
             content: "summary_large_image",
         },
+        {
+            name: "twitter:image:src",
+            content: OGImage,
+        },
     ];
 };
 
