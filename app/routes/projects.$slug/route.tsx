@@ -39,6 +39,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     }
 
     const { frontmatter, code } = post;
+
     return json({ frontmatter, code, slug });
 };
 

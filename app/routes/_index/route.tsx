@@ -7,7 +7,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Footer from "./Footer";
-import HeroImage from "~/../public/images/hero.png";
+import OGImage from "~/../public/images/og.png";
 
 export const meta: MetaFunction = () => {
     return [
@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => {
         },
         {
             property: "og:image",
-            content: HeroImage,
+            content: OGImage,
         },
     ];
 };
