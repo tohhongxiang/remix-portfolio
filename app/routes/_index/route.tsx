@@ -7,6 +7,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Footer from "./Footer";
+import HeroImage from "~/../public/images/hero.png";
 
 export const meta: MetaFunction = () => {
     return [
@@ -14,6 +15,10 @@ export const meta: MetaFunction = () => {
         {
             name: "description",
             content: "Portfolio showcase for Toh Hong Xiang",
+        },
+        {
+            property: "og:image",
+            content: HeroImage,
         },
     ];
 };
