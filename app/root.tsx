@@ -18,6 +18,7 @@ import {
 } from "remix-themes";
 import { themeSessionResolver } from "./sessions.server";
 import { ModeToggle } from "./components/mode-toggle";
+import { SpeedInsights } from "@vercel/speed-insights/remix";
 
 // Return the theme from the session storage using the loader
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -70,6 +71,7 @@ export function App() {
                 <div className="fixed right-2 top-2 z-30">
                     <ModeToggle />
                 </div>
+                <SpeedInsights />
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />
