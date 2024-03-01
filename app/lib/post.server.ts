@@ -3,6 +3,8 @@ import { readFile, readdir } from "./fs.server";
 import { join, extname } from "path";
 import { bundleMDX } from "./mdx.server";
 
+import remarkGfm from "remark-gfm";
+
 export type ProjectFrontMatter = {
     title: string;
     description: string;
@@ -22,13 +24,6 @@ export type ProjectFrontMatter = {
 export async function getProject(directory: string, slug: string) {
     const projectDirectory = join(process.cwd(), "app", directory);
     const projectFilePath = join(projectDirectory, slug + ".md");
-
-    // Dyamically import all the rehype/remark plugins we are using
-    const [rehypePrettyCode, remarkGfm, remarkMdxImages] = await Promise.all([
-        import("rehype-pretty-code").then((mod) => mod.default),
-        import("remark-gfm").then((mod) => mod.default),
-        import("remark-mdx-images").then((mod) => mod.default),
-    ]);
 
     const post = await bundleMDX<ProjectFrontMatter>({
         file: projectFilePath,
@@ -50,12 +45,9 @@ export async function getProject(directory: string, slug: string) {
             options.remarkPlugins = [
                 ...(options.remarkPlugins ?? []),
                 remarkGfm,
-                remarkMdxImages,
+                // remarkMdxImages,
             ];
-            options.rehypePlugins = [
-                ...(options.rehypePlugins ?? []),
-                [rehypePrettyCode, { theme: "one-dark-pro" }],
-            ];
+            options.rehypePlugins = [...(options.rehypePlugins ?? [])]; // [rehypePrettyCode, { theme: "one-dark-pro" }] for code syntax highlighting
             return options;
         },
     });
