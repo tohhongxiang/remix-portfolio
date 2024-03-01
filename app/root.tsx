@@ -64,9 +64,8 @@ export const links: LinksFunction = () => [
     { rel: "stylesheet", href: tailwindStyles },
     {
         rel: "preload",
-        href: "/fonts/inter/Inter-VariableFont_slnt,wght.ttf",
+        href: "/fonts/inter/Inter-VariableFont_slnt,wght.woff2",
         as: "font",
-        type: "font/ttf",
         crossOrigin: "anonymous",
     },
     ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
