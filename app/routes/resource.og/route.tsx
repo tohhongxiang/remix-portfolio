@@ -1,20 +1,21 @@
 // ./app/routes/resource/og.ts
 
 import { LoaderFunctionArgs } from "@remix-run/node";
-import { createOGImage } from "~/lib/createOGImage.server";
+import { createProjectOGImage } from "~/lib/createOGImage.server";
 
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
     const { origin, searchParams } = new URL(request.url);
-    const title = searchParams.get("title") ?? `Big Title`;
-    const subtitle = searchParams.get("subtitle") ?? "A tiny subtitle";
+
+    const title = searchParams.get("title") ?? `Toh Hong Xiang`;
+    const subtitle = searchParams.get("subtitle") ?? "Full-stack Web Developer";
     const imgSrc =
         searchParams.get("src") ??
         "https://github.com/tohhongxiang123/remix-portfolio/blob/master/public/images/hero.png?raw=true";
 
-    const png = await createOGImage(
+    const png = await createProjectOGImage(
         title,
         subtitle,
         imgSrc,
