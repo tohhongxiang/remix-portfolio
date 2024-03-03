@@ -6,7 +6,7 @@ import { getProjects } from "~/lib/post.server";
 import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
-import Footer from "./Footer";
+import Footer from "~/components/footer";
 
 export const loader: LoaderFunction = async () => {
     const posts = await getProjects("projects");
