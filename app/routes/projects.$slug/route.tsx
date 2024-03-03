@@ -27,10 +27,30 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
                 data?.frontmatter.description ??
                 `Detailed write-up for project: ${data?.frontmatter.title}`,
         },
+
+        // facebook meta tags
+        {
+            property: "og:type",
+            content: "website",
+        },
+        {
+            property: "og:image",
+            content: data?.ogImageUrl,
+        },
+
+        // twitter meta tags
+        {
+            name: "twitter:card",
+            content: "summary_large_image",
+        },
+        {
+            name: "twitter:image",
+            content: data?.ogImageUrl,
+        },
     ];
 };
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     const slug = params.slug;
     if (!slug) throw new Response(`Slug required!`, { status: 404 });
 
@@ -42,7 +62,16 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
     const { frontmatter, code } = post;
 
-    return json({ frontmatter, code, slug });
+    const { origin } = new URL(request.url);
+    const ogImageUrl = new URL("/resource/og", origin);
+    ogImageUrl.searchParams.append("title", post.frontmatter.title);
+    ogImageUrl.searchParams.append("subtitle", post.frontmatter.description);
+    ogImageUrl.searchParams.append(
+        "src",
+        `${origin}${post.frontmatter.thumbnail}`
+    );
+
+    return json({ frontmatter, code, slug, ogImageUrl });
 };
 
 export default function SpecificProjectRoute() {
