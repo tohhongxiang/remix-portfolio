@@ -3,14 +3,16 @@ import {
     MetaFunction,
     isRouteErrorResponse,
     useLoaderData,
+    useNavigate,
     useRouteError,
 } from "@remix-run/react";
 import { getProject } from "~/lib/post.server";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
-import { Info, LucideLink } from "lucide-react";
+import { ChevronLeft, Info, LucideLink } from "lucide-react";
 import ImageCarousel from "~/components/image-carousel";
 import CustomCodeBlock from "~/components/custom-code-block";
+import { Button } from "~/components/ui/button";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [
@@ -48,9 +50,21 @@ export default function SpecificProjectRoute() {
 
     const Component = useMemo(() => getMDXComponent(code), [code]);
 
+    const navigate = useNavigate();
+
     return (
         <div className="h-full w-full px-6">
             <div className="mx-auto flex max-w-[80ch] flex-col gap-8 py-16">
+                <div>
+                    <Button
+                        className="group"
+                        variant="ghost"
+                        onClick={() => navigate(-1)}
+                    >
+                        <ChevronLeft className="mr-2 h-4 w-4 transition duration-150 group-focus-within:-translate-x-1 group-hover:-translate-x-1" />
+                        <span>Go back</span>
+                    </Button>
+                </div>
                 <h1
                     className="text-center text-4xl font-bold lg:text-5xl"
                     style={{ viewTransitionName: `${slug}-title` }}
