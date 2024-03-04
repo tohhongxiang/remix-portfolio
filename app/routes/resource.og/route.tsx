@@ -30,7 +30,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
         headers: {
             // Tell the browser the response is an image
             "Content-Type": "image/png",
-            "cache-control": "public, immutable, no-transform, max-age=86400",
+            "cache-control": "public, immutable, no-transform, max-age=604800",
         },
     });
 };

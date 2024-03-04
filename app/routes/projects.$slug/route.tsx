@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs, json } from "@remix-run/node";
+import { HeadersFunction, LoaderFunctionArgs, json } from "@remix-run/node";
 import {
     MetaFunction,
     isRouteErrorResponse,
@@ -13,6 +13,10 @@ import { ChevronLeft, Info, LucideLink } from "lucide-react";
 import ImageCarousel from "~/components/image-carousel";
 import CustomCodeBlock from "~/components/custom-code-block";
 import { Button } from "~/components/ui/button";
+
+export const headers: HeadersFunction = () => ({
+    "Cache-Control": "public, max-age=86400, s-maxage=604800", // browser cache for 1 day, cdn cache for 1 week
+});
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [
