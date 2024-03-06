@@ -1,15 +1,15 @@
+import {
+    LazyMotion,
+    domAnimation,
+    domMax,
+    m,
+    useAnimationControls,
+} from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
 import LightDarkVariant from "~/components/light-dark-variant";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
-import {
-    LazyMotion,
-    useAnimationControls,
-    m,
-    domAnimation,
-    domMax,
-} from "framer-motion";
-import { useEffect, useState } from "react";
 
 const imageVariants = {
     hidden: {},
@@ -79,7 +79,7 @@ export default function HeroSection() {
     return (
         <div
             className={cn(
-                "flex min-h-screen w-full flex-grow flex-col justify-around gap-x-8 gap-y-4 py-4 sm:py-32"
+                "flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 py-4 sm:gap-y-32 sm:py-16"
             )}
         >
             <div className="relative flex flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row md:items-end">
@@ -105,7 +105,7 @@ export default function HeroSection() {
                                     <img
                                         alt=""
                                         src="/images/hero.png"
-                                        className="mx-auto h-auto w-[300px] object-contain sm:h-[300px]"
+                                        className="mx-auto h-auto w-[250px] object-contain sm:h-[300px] sm:w-[300px]"
                                         fetchpriority="high"
                                     />
                                 </picture>
@@ -123,7 +123,7 @@ export default function HeroSection() {
                                     <img
                                         src="/images/hero-dark.png"
                                         alt=""
-                                        className="mx-auto h-auto w-[300px] object-contain sm:h-[300px]"
+                                        className="mx-auto h-auto w-[250px] object-contain sm:h-[300px] sm:w-[300px]"
                                         fetchpriority="high"
                                     />
                                 </picture>
@@ -142,7 +142,7 @@ export default function HeroSection() {
                             <m.h1
                                 variants={ctaTextItemVariants}
                                 className={cn(
-                                    "text-center text-5xl font-semibold tracking-tight md:text-left lg:text-7xl",
+                                    "text-center text-4xl font-semibold tracking-tight sm:text-5xl md:text-left lg:text-7xl",
                                     heroTextGradientClassNames
                                 )}
                             >
@@ -150,7 +150,7 @@ export default function HeroSection() {
                             </m.h1>
                             <m.p
                                 className={cn(
-                                    "mb-4 text-center text-xl font-semibold text-foreground/80 md:text-left"
+                                    "mb-4 text-center text-lg font-semibold text-foreground/80 sm:text-xl md:text-left"
                                 )}
                                 variants={ctaTextItemVariants}
                             >
@@ -158,7 +158,7 @@ export default function HeroSection() {
                             </m.p>
                             <m.p
                                 className={cn(
-                                    "mb-8 text-center text-xl text-muted-foreground md:text-left"
+                                    "mb-8 text-center text-lg text-muted-foreground sm:text-xl md:text-left"
                                 )}
                                 variants={ctaTextItemVariants}
                             >
