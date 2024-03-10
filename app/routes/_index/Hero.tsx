@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import Wave from "~/components/blobs/wave";
 import LightDarkVariant from "~/components/light-dark-variant";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
@@ -79,7 +80,7 @@ export default function HeroSection() {
     return (
         <div
             className={cn(
-                "flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 py-4 sm:gap-y-32 sm:py-16"
+                "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 py-4 sm:gap-y-32 sm:py-16"
             )}
         >
             <div className="relative flex flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row md:items-end">
@@ -209,6 +210,7 @@ export default function HeroSection() {
                     </m.div>
                 </m.div>
             </LazyMotion>
+            <Wave className="-mx-4 fill-muted-foreground" />
         </div>
     );
 }
