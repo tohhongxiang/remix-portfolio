@@ -13,6 +13,7 @@ import { ChevronLeft, Info, LucideLink } from "lucide-react";
 import ImageCarousel from "~/components/image-carousel";
 import CustomCodeBlock from "~/components/custom-code-block";
 import { Button } from "~/components/ui/button";
+import BlurryBlob from "~/components/blobs/blurry-blob";
 
 export const headers: HeadersFunction = () => ({
     "Cache-Control": "public, max-age=86400, s-maxage=604800", // browser cache for 1 day, cdn cache for 1 week
@@ -87,7 +88,7 @@ export default function SpecificProjectRoute() {
 
     return (
         <div className="relative h-full w-full overflow-x-hidden px-6">
-            <div className="absolute left-1/2 top-1/2 -z-10 h-[600px] w-full -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-emerald-100/10 blur-3xl dark:bg-indigo-800/10" />
+            <BlurryBlob className="absolute left-1/2 top-1/2 -z-10 h-[600px] w-[3000px] -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full" />
             <div className="mx-auto flex max-w-[80ch] flex-col gap-8 py-16">
                 <div>
                     <Button
