@@ -86,7 +86,8 @@ export default function SpecificProjectRoute() {
     const navigate = useNavigate();
 
     return (
-        <div className="h-full w-full px-6">
+        <div className="relative h-full w-full px-6">
+            <div className="absolute left-1/2 top-1/2 -z-10 h-[600px] w-full -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-emerald-100/10 blur-3xl dark:bg-indigo-800/10" />
             <div className="mx-auto flex max-w-[80ch] flex-col gap-8 py-16">
                 <div>
                     <Button

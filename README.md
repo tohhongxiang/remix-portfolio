@@ -131,3 +131,4 @@ All these improvements gave the following result:
 -   https://blacksheepcode.com/posts/adding_msw_bundler_to_remix_app
 -   https://www.sarasoueidan.com/blog/nested-links/
 -   https://www.simeongriggs.dev/serve-dynamic-og-images-from-remix-with-satori
+-   https://blog.noelcserepy.com/how-to-animate-svg-paths-with-framer-motion

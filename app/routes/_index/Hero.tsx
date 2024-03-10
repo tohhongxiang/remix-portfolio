@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import Wave from "~/components/blobs/wave";
 import LightDarkVariant from "~/components/light-dark-variant";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
@@ -80,9 +79,10 @@ export default function HeroSection() {
     return (
         <div
             className={cn(
-                "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 py-4 sm:gap-y-32 sm:py-16"
+                "bcakdrop-blur-xl relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 py-4 sm:gap-y-32 sm:py-16"
             )}
         >
+            <div className="absolute left-1/2 top-1/2 h-[500px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-100/10 blur-3xl dark:bg-indigo-800/10 md:w-3/4" />
             <div className="relative flex flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row md:items-end">
                 <LazyMotion features={domMax} strict>
                     <m.div
@@ -176,7 +176,7 @@ export default function HeroSection() {
                     initial="hidden"
                     animate={controls}
                     variants={ctaButtonsVariants}
-                    className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2"
+                    className="z-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2"
                 >
                     <m.div variants={ctaButtonsItemsVariants}>
                         <Button
@@ -210,7 +210,6 @@ export default function HeroSection() {
                     </m.div>
                 </m.div>
             </LazyMotion>
-            <Wave className="-mx-4 fill-muted-foreground" />
         </div>
     );
 }

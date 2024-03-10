@@ -19,11 +19,15 @@ interface ProjectProps {
 
 export default function Projects({ projects }: ProjectProps) {
     return (
-        <div className="flex flex-col items-center">
+        <div
+            className="relative flex flex-col items-center"
+            style={{ contain: "paint" }}
+        >
             <div className="max-w-prose" id="projects">
                 <h1 className="sticky top-0 z-30 w-full bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     PROJECTS
                 </h1>
+                <div className="absolute left-1/2 top-1/2 h-[800px] w-[3200px] -translate-x-1/2 -translate-y-1/2 -rotate-[30deg] bg-emerald-100/10 blur-3xl dark:bg-indigo-800/10" />
                 <ul className="group pointer-events-none flex flex-col gap-y-12 px-3">
                     {projects.map((project) => (
                         <li key={project.title}>

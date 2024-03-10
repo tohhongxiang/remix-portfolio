@@ -23,11 +23,12 @@ export default function Index() {
     const data = useLoaderData<typeof loader>();
 
     return (
-        <div className="flex flex-col gap-y-16 px-4">
+        <div className="flex flex-col gap-y-16">
             <HeroSection />
+            <Wave className="-mt-32" />
             <About />
             <Experience />
-            <Wave className="-mx-4 fill-muted-foreground" />
+            <Wave />
             <Projects projects={data.projects} />
             <Contact />
             <Footer />
