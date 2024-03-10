@@ -83,7 +83,7 @@ export default function HeroSection() {
                 "bcakdrop-blur-xl relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 py-4 sm:gap-y-32 sm:py-16"
             )}
         >
-            <BlurryBlob className="absolute left-1/2 top-1/2 h-[500px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full md:w-3/4" />
+            <BlurryBlob className="absolute left-1/2 top-1/2 h-[500px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 md:w-3/4" />
             <div className="relative flex flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row md:items-end">
                 <LazyMotion features={domMax} strict>
                     <m.div

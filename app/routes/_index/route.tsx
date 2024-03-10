@@ -30,6 +30,7 @@ export default function Index() {
             <Experience />
             <Wave />
             <Projects projects={data.projects} />
+            <Wave />
             <Contact />
             <Footer />
         </div>

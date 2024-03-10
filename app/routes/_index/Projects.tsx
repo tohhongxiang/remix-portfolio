@@ -2,7 +2,6 @@ import { Button } from "~/components/ui/button";
 import { Link, useNavigation } from "@remix-run/react";
 import { ArrowRight, Loader2, Link as LucideLink } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
-import BlurryBlob from "~/components/blobs/blurry-blob";
 
 interface Project {
     slug: string;
@@ -28,7 +27,6 @@ export default function Projects({ projects }: ProjectProps) {
                 <h1 className="sticky top-0 z-30 w-full bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     PROJECTS
                 </h1>
-                <BlurryBlob className="absolute left-1/2 top-1/2 h-[800px] w-[3200px] -translate-x-1/2 -translate-y-1/2 -rotate-[30deg]" />
                 <ul className="group pointer-events-none flex flex-col gap-y-12 px-3">
                     {projects.map((project) => (
                         <li key={project.title}>

@@ -12,7 +12,7 @@ export default function BlurryBlob({
             {...props}
             className={cn(
                 className,
-                "-z-10 bg-emerald-200/30 blur-3xl dark:bg-indigo-800/10"
+                "-z-10 bg-emerald-200/30 blur-3xl dark:bg-indigo-800/20"
             )}
         />
     );
