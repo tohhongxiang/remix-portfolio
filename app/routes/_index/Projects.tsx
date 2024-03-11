@@ -19,8 +19,8 @@ interface ProjectProps {
 
 export default function Projects({ projects }: ProjectProps) {
     return (
-        <div
-            className="relative flex flex-col items-center"
+        <section
+            className="relative flex flex-col items-center px-4"
             style={{ contain: "paint" }}
         >
             <div className="max-w-prose" id="projects">
@@ -47,7 +47,7 @@ export default function Projects({ projects }: ProjectProps) {
                     ))}
                 </ul>
             </div>
-        </div>
+        </section>
     );
 }
 

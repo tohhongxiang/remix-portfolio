@@ -78,9 +78,9 @@ export default function HeroSection() {
         "bg-gradient-to-r from-indigo-500 to-emerald-500 dark:from-indigo-500 dark:to-pink-500 pb-3 -mb-3 text-transparent bg-clip-text";
 
     return (
-        <div
+        <section
             className={cn(
-                "bcakdrop-blur-xl relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 py-4 sm:gap-y-32 sm:py-16"
+                "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-16 p-4 sm:gap-y-32 sm:py-16"
             )}
         >
             <BlurryBlob className="absolute left-1/2 top-1/2 h-[500px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 md:w-3/4" />
@@ -211,7 +211,7 @@ export default function HeroSection() {
                     </m.div>
                 </m.div>
             </LazyMotion>
-        </div>
+        </section>
     );
 }
 

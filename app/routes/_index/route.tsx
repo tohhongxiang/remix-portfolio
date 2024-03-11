@@ -25,7 +25,7 @@ export default function Index() {
     return (
         <div className="flex flex-col gap-y-16">
             <HeroSection />
-            <Wave className="-mt-32" />
+            <Wave className="-mt-16 sm:-mt-20" />
             <About />
             <Experience />
             <Wave />

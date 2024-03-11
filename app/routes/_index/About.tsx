@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <div className="flex w-full flex-col items-center" id="about">
+        <div className="flex w-full flex-col items-center px-4" id="about">
             <div className="max-w-prose">
                 <h1 className="sticky top-0 z-10 bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     About Me
