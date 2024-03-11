@@ -9,7 +9,13 @@ export default function Wave({
     HTMLDivElement
 >) {
     return (
-        <div {...props} className={cn(className, "-z-10")}>
+        <div
+            {...props}
+            className={cn(
+                className,
+                "-z-10 flex w-full flex-col items-center overflow-hidden"
+            )}
+        >
             <LazyMotion features={domAnimation}>
                 <m.svg
                     id="visual"
@@ -17,7 +23,8 @@ export default function Wave({
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     version="1.1"
-                    preserveAspectRatio="xMidYMid meet"
+                    preserveAspectRatio="none"
+                    className="min-w-[960px]"
                 >
                     <m.path
                         initial={{ pathLength: 0, opacity: 0 }}
