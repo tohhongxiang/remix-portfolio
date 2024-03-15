@@ -11,24 +11,40 @@ export default function Experience() {
                 <ul className="mb-8 flex flex-col items-start justify-center gap-y-8 px-3">
                     <li>
                         <ExperienceCard
+                            title="Private Tutor"
+                            company="Self-Employed"
+                            start="January 2021"
+                            end="Present"
+                            description={[
+                                "Developed personalized lesson plans tailored to individual student needs, leading to 30% grade improvements",
+                                "Enhanced student learning by engaging in real-world projects, making students more confident and passionate",
+                            ]}
+                        />
+                    </li>
+                    <li>
+                        <ExperienceCard
                             title="Marketplace Intelligence Engineer"
                             company="Shopee Singapore"
-                            start="May"
-                            end="Dec 2022"
-                            description={
-                                "Collaborated with multiple teams to enhance deployment monitoring capabilities, providing real-time insights and visualizations to facilitate quick analysis and informed decision-making. Contributed significantly to improve A/B testing workflows with comprehensive dashboard visualisations to accelerate business decisions which impact millions of customers daily."
-                            }
+                            start="May 2022"
+                            end="December 2022"
+                            description={[
+                                "Optimized deployment monitoring with Grafana, increasing deployment efficiency by 20%",
+                                "Utilized clean architecture principles and automated testing to ensure maintainability and testability",
+                                "Engineered scalable applications with Redis and Golang, decreasing latency by 10%",
+                            ]}
                         />
                     </li>
                     <li>
                         <ExperienceCard
                             title="Software Engineer"
                             company="Industrial Electronics Pte Ltd"
-                            start="Dec 2019"
+                            start="December 2019"
                             end="July 2020"
-                            description={
-                                "Engineered and implemented innovative features for a React and GraphQL E-commerce application to facilitate warehouse stock tracking and trading functionalities. Pioneered a streamlined workflow for content writers by developing a user-friendly drag-and-drop template builder in React. Delivered an exceptional user experience through the implementation of a results-driven UI, consistently achieving project milestones ahead of schedule."
-                            }
+                            description={[
+                                "Enhanced trading functionalities in a ReactJS, MongoDB, and GraphQL e-commerce app, boosting performance by 15%",
+                                "Collaborated closely with content writers to develop a user-friendly drag-and-drop template builder in ReactJS, reducing workflow time by 15%",
+                                "Proactively identified and resolved issues in standups, consistently achieving milestones two weeks ahead of schedule",
+                            ]}
                         />
                     </li>
                 </ul>
@@ -55,7 +71,7 @@ interface ExperienceCardProps {
     company: string;
     start: string;
     end: string;
-    description: string;
+    description: string | string[];
 }
 function ExperienceCard({
     title,
@@ -69,10 +85,18 @@ function ExperienceCard({
             <p className="text-sm uppercase text-muted-foreground">
                 {start} - {end}
             </p>
-            <h2 className="text-medium font-semibold">
+            <h2 className="text-medium mb-2 font-semibold">
                 {title} - {company}
             </h2>
-            <p className="mt-2 text-muted-foreground">{description}</p>
+            {description instanceof Array ? (
+                <ul className="ms-4 list-outside list-disc text-muted-foreground">
+                    {description.map((description) => (
+                        <li key={description}>{description}</li>
+                    ))}
+                </ul>
+            ) : (
+                <p className="text-muted-foreground">{description}</p>
+            )}
         </div>
     );
 }
