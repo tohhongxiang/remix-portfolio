@@ -35,7 +35,7 @@ export default function Experience() {
                 <div className="px-3">
                     <Button asChild className="group">
                         <a
-                            href="resume.pdf"
+                            href="Toh-Hong-Xiang-Resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer"
