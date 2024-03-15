@@ -13,6 +13,7 @@ import { ChevronLeft, Info, LucideLink } from "lucide-react";
 import ImageCarousel from "~/components/image-carousel";
 import CustomCodeBlock from "~/components/custom-code-block";
 import { Button } from "~/components/ui/button";
+import BlurryBlob from "~/components/blobs/blurry-blob";
 
 export const headers: HeadersFunction = () => ({
     "Cache-Control": "public, max-age=86400, s-maxage=604800", // browser cache for 1 day, cdn cache for 1 week
@@ -86,8 +87,13 @@ export default function SpecificProjectRoute() {
     const navigate = useNavigate();
 
     return (
-        <div className="h-full w-full px-6">
-            <div className="mx-auto flex max-w-[80ch] flex-col gap-8 py-16">
+        <div className="relative h-full w-full overflow-hidden px-6">
+            <BlurryBlob className="absolute right-0 top-1/2 h-[600px] w-[400px] -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full" />
+            <BlurryBlob className="absolute bottom-0 left-0 h-[600px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+            <BlurryBlob className="absolute right-0 top-0 h-[200px] w-[200px] rounded-full" />
+            <BlurryBlob className="absolute bottom-0 right-0 h-[200px] w-[200px] rounded-full" />
+            <div className="relative mx-auto flex max-w-[80ch] flex-col gap-8 py-16">
+                <BlurryBlob className="absolute left-1/2 top-1/2 h-[200px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
                 <div>
                     <Button
                         className="group"

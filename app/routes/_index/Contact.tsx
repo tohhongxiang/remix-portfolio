@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <div className="mx-auto flex w-full flex-col items-center justify-center p-4 pb-16">
+        <div className="mx-auto flex w-full flex-col items-center justify-center px-4 pb-16">
             <h1 className="mb-8 text-center text-sm font-bold uppercase tracking-widest text-foreground">
                 Contact Me!
             </h1>

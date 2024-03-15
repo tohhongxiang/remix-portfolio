@@ -7,6 +7,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Footer from "~/components/footer";
+import Wave from "~/components/blobs/wave";
 
 export const loader: LoaderFunction = async () => {
     const posts = await getProjects("projects");
@@ -22,11 +23,14 @@ export default function Index() {
     const data = useLoaderData<typeof loader>();
 
     return (
-        <div className="flex flex-col gap-y-16 px-3">
+        <div className="flex flex-col gap-y-16">
             <HeroSection />
+            <Wave className="-mt-16 sm:-mt-20" />
             <About />
             <Experience />
+            <Wave />
             <Projects projects={data.projects} />
+            <Wave />
             <Contact />
             <Footer />
         </div>

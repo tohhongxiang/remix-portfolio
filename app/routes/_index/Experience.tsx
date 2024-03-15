@@ -3,7 +3,7 @@ import { Button } from "~/components/ui/button";
 
 export default function Experience() {
     return (
-        <div className="flex w-full flex-col items-center">
+        <section className="flex w-full flex-col items-center px-4">
             <div className="max-w-prose" id="experience">
                 <h1 className="sticky top-0 z-10 bg-background/85 px-3 py-6 text-sm font-bold uppercase tracking-widest text-foreground backdrop-blur-sm">
                     Experience
@@ -46,7 +46,7 @@ export default function Experience() {
                     </Button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
