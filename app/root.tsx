@@ -99,7 +99,7 @@ export function App() {
                 <Links />
             </head>
             <body className="relative bg-background">
-                <div className="fixed right-2 top-2 z-40">
+                <div className="fixed right-2 top-2 z-[200]">
                     <ModeToggle />
                 </div>
                 <SpeedInsights />

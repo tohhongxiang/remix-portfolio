@@ -13,6 +13,7 @@ screenshots:
         /project_screenshots/nextjs-blog/image-4.jpg,
     ]
 date: Jan 2024
+featured: true
 ---
 
 This NextJS blog application leverages a file-based content management system (CMS) for efficient content organization and management. With NextJS as the framework of choice, the application ensures high performance and scalability, ideal for handling a growing library of blog posts.

@@ -12,6 +12,7 @@ screenshots:
         /project_screenshots/directus-nextjs/image-4.jpg,
     ]
 date: June 2023
+featured: true
 ---
 
 This is a fully-fledged E-commerce template built using NextJS, Directus and Snipcart. Features include:

@@ -10,7 +10,7 @@ import Footer from "~/components/footer";
 import Wave from "~/components/blobs/wave";
 
 export const loader: LoaderFunction = async () => {
-    const posts = await getProjects("projects");
+    const posts = await getProjects("projects", true);
     return json({
         projects: posts.map((post) => ({
             ...post.frontmatter,

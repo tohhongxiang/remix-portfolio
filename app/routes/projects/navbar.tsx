@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <nav
             className={cn(
-                "fixed left-0 top-0 z-10 flex w-full bg-background/80 px-4 py-4 backdrop-blur",
+                "fixed left-0 top-0 z-[100] flex w-full bg-background/80 px-4 py-4 backdrop-blur",
                 scrolled && "border-b shadow-sm"
             )}
         >

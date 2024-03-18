@@ -14,6 +14,7 @@ export type ProjectFrontMatter = {
     githubLink: string;
     demoLink?: string;
     date: string;
+    featured: boolean;
 };
 
 /**
@@ -65,7 +66,10 @@ export async function getProject(directory: string, slug: string) {
  * Get all frontmatter for all projects
  * @returns
  */
-export async function getProjects(directory: string) {
+export async function getProjects(
+    directory: string,
+    featured: boolean = false
+) {
     const filePath = join(process.cwd(), "app", directory);
 
     const postsPath = await readdir(filePath, { withFileTypes: true }).then(
@@ -75,7 +79,7 @@ export async function getProjects(directory: string) {
             )
     );
 
-    const posts = await Promise.all(
+    let posts = await Promise.all(
         postsPath.map(async (dirent) => {
             const fPath = join(filePath, dirent.name);
             const file = await readFile(fPath);
@@ -90,6 +94,10 @@ export async function getProjects(directory: string) {
             };
         })
     );
+
+    if (featured) {
+        posts = posts.filter((post) => post.frontmatter.featured);
+    }
 
     return posts.sort(
         (postA, postB) =>
