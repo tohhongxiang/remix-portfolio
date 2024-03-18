@@ -49,7 +49,7 @@ export default function Experience() {
                     </li>
                 </ul>
                 <div className="px-3">
-                    <Button asChild className="group">
+                    <Button asChild className="group" variant="secondary">
                         <a
                             href="Toh-Hong-Xiang-Resume.pdf"
                             target="_blank"

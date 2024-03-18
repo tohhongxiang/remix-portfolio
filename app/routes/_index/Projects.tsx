@@ -1,7 +1,7 @@
-import { Button } from "~/components/ui/button";
 import { Link } from "@remix-run/react";
 import { ChevronRight } from "lucide-react";
 import ProjectCard from "~/components/project-card";
+import { Button } from "~/components/ui/button";
 
 export interface Project {
     slug: string;
@@ -47,7 +47,7 @@ export default function Projects({ projects }: ProjectProps) {
                     ))}
                 </ul>
                 <div className="px-3">
-                    <Button asChild className="group">
+                    <Button asChild className="group" variant="secondary">
                         <Link
                             to="/projects"
                             className="cursor-pointer"
