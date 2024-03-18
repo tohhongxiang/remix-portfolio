@@ -4,7 +4,10 @@ import ProjectCard from "~/components/project-card";
 import { Button } from "~/components/ui/button";
 import { getProjects } from "~/lib/post.server";
 
-export const meta = () => [{ title: "Projects | THX" }];
+export const meta = () => [
+    { title: "Projects | THX" },
+    { name: "description", content: "List of projects by Toh Hong Xiang" },
+];
 export const loader = async () => {
     const posts = await getProjects("projects");
     return json({
