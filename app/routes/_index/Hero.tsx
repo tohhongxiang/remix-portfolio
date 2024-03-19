@@ -74,7 +74,7 @@ export default function HeroSection() {
     return (
         <section
             className={cn(
-                "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-8 p-4 sm:py-16"
+                "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-8 p-4"
             )}
         >
             <BlurryBlob className="absolute left-1/2 top-1/2 h-[500px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 md:w-3/4" />
@@ -136,7 +136,7 @@ export default function HeroSection() {
                             <m.h1
                                 variants={ctaTextItemVariants}
                                 className={cn(
-                                    "text-center text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl",
+                                    "text-balance text-center text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl",
                                     heroTextGradientClassNames
                                 )}
                             >
@@ -144,7 +144,7 @@ export default function HeroSection() {
                             </m.h1>
                             <m.p
                                 className={cn(
-                                    "mb-4 text-center text-lg font-semibold text-foreground/80 sm:text-xl"
+                                    "mb-4 text-balance text-center text-lg font-semibold text-foreground/80 sm:text-xl"
                                 )}
                                 variants={ctaTextItemVariants}
                             >

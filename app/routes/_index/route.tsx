@@ -1,14 +1,14 @@
 import { json, type LoaderFunction } from "@remix-run/node";
-import HeroSection from "./Hero";
-import Projects from "./Projects";
 import { useLoaderData } from "@remix-run/react";
+import { domMax, LazyMotion } from "framer-motion";
+import Wave from "~/components/blobs/wave";
+import Footer from "~/components/footer";
 import { getProjects } from "~/lib/post.server";
 import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
-import Footer from "~/components/footer";
-import Wave from "~/components/blobs/wave";
-import { domMax, LazyMotion } from "framer-motion";
+import HeroSection from "./Hero";
+import Projects from "./Projects";
 
 export const loader: LoaderFunction = async () => {
     const posts = await getProjects("projects", true);
@@ -27,7 +27,6 @@ export default function Index() {
         <LazyMotion features={domMax} strict>
             <div className="flex flex-col gap-y-16">
                 <HeroSection />
-                <Wave className="-mt-16 sm:-mt-20" />
                 <About />
                 <Experience />
                 <Wave />
