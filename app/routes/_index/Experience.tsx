@@ -11,26 +11,15 @@ export default function Experience() {
                 <ul className="mb-8 flex flex-col items-start justify-center gap-y-8 px-3">
                     <li>
                         <ExperienceCard
-                            title="Private Tutor"
-                            company="Self-Employed"
-                            start="January 2021"
-                            end="Present"
-                            description={[
-                                "Developed personalized lesson plans tailored to individual student needs, leading to 30% grade improvements",
-                                "Enhanced student learning by engaging in real-world projects, making students more confident and passionate",
-                            ]}
-                        />
-                    </li>
-                    <li>
-                        <ExperienceCard
                             title="Marketplace Intelligence Engineer"
                             company="Shopee Singapore"
                             start="May 2022"
                             end="December 2022"
                             description={[
-                                "Optimized deployment monitoring with Grafana, increasing deployment efficiency by 20%",
-                                "Utilized clean architecture principles and automated testing to ensure maintainability and testability",
-                                "Engineered scalable applications with Redis and Golang, decreasing latency by 10%",
+                                "Enhanced cross-team deployment monitoring infrastructures with Grafana, improving deployment efficiency by 20%.",
+                                "Architectured scalable back-end solutions using Redis and Golang, reducing latency by 10%.",
+                                "Optimized A/B testing processes by creating front-end dashboard visualizations in ReactJS and Typescript, resulting in a 20% increase in click-through rates.",
+                                "Championed clean architecture principles and automated unit testing to ensure maintainability and testability, fostering collaboration within the team.",
                             ]}
                         />
                     </li>
@@ -41,9 +30,10 @@ export default function Experience() {
                             start="December 2019"
                             end="July 2020"
                             description={[
-                                "Enhanced trading functionalities in a ReactJS, MongoDB, and GraphQL e-commerce app, boosting performance by 15%",
-                                "Collaborated closely with content writers to develop a user-friendly drag-and-drop template builder in ReactJS, reducing workflow time by 15%",
-                                "Proactively identified and resolved issues in standups, consistently achieving milestones two weeks ahead of schedule",
+                                "Enhanced trading functionalities of ReactJS, MongoDB, and GraphQL e-commerce application, driving a 15% improvement in performance.",
+                                "Collaborated with content writers throughout the full product lifecycle to gather technical requirements and prototype a user-friendly drag-and-drop template builder in ReactJS, streamlining workflow time by 15%.",
+                                "Proactively identified issues and proposed solutions during standups, achieving milestones 2 weeks ahead of schedule.",
+                                "Contributed to and maintained existing documentation based on user feedback, decreasing onboarding time by 20%.",
                             ]}
                         />
                     </li>
@@ -51,7 +41,7 @@ export default function Experience() {
                 <div className="px-3">
                     <Button asChild className="group" variant="secondary">
                         <a
-                            href="Toh-Hong-Xiang-Resume.pdf"
+                            href="tohhongxiang-Resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer"
@@ -91,7 +81,9 @@ function ExperienceCard({
             {description instanceof Array ? (
                 <ul className="ms-4 list-outside list-disc text-muted-foreground">
                     {description.map((description) => (
-                        <li key={description}>{description}</li>
+                        <li key={description} className="mb-2">
+                            {description}
+                        </li>
                     ))}
                 </ul>
             ) : (

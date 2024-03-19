@@ -3,7 +3,7 @@ title: "lAIs: Learn with AI!"
 thumbnail: /project_screenshots/lais/thumbnail.jpg
 description: An AI Companion for students to study lectures more efficiently
 detailedDescription: lAIs is a web-based tool that takes a URL of an uploaded video lecture (on YouTube), and generates a variety of outputs to supplement learning. Summaries, audio transcriptions, quiz questions and even a chat to clarify doubts!
-githubLink: https://github.com/tohhongxiang123/techfest-2024/tree/master
+githubLink: https://github.com/tohhongxiang/techfest-2024/tree/master
 screenshots:
     [
         /project_screenshots/lais/image-1.jpg,

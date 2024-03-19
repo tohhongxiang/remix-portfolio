@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import Experience from "./Experience";
 import Footer from "~/components/footer";
 import Wave from "~/components/blobs/wave";
+import { domMax, LazyMotion } from "framer-motion";
 
 export const loader: LoaderFunction = async () => {
     const posts = await getProjects("projects", true);
@@ -23,16 +24,18 @@ export default function Index() {
     const data = useLoaderData<typeof loader>();
 
     return (
-        <div className="flex flex-col gap-y-16">
-            <HeroSection />
-            <Wave className="-mt-16 sm:-mt-20" />
-            <About />
-            <Experience />
-            <Wave />
-            <Projects projects={data.projects} />
-            <Wave />
-            <Contact />
-            <Footer />
-        </div>
+        <LazyMotion features={domMax} strict>
+            <div className="flex flex-col gap-y-16">
+                <HeroSection />
+                <Wave className="-mt-16 sm:-mt-20" />
+                <About />
+                <Experience />
+                <Wave />
+                <Projects projects={data.projects} />
+                <Wave />
+                <Contact />
+                <Footer />
+            </div>
+        </LazyMotion>
     );
 }

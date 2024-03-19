@@ -9,7 +9,7 @@ export default function Contact() {
             </p>
             <div className="flex items-center justify-center gap-x-8 md:justify-start">
                 <a
-                    href="https://www.linkedin.com/in/toh-hong-xiang/"
+                    href="https://www.linkedin.com/in/tohhongxiang/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="opacity-75 transition-all duration-150 ease-in-out hover:rotate-3 hover:scale-105 hover:opacity-100"

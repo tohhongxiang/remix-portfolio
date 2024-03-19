@@ -13,7 +13,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     const subtitle = searchParams.get("subtitle") ?? "Full-stack Web Developer";
     const imgSrc =
         searchParams.get("src") ??
-        "https://github.com/tohhongxiang123/remix-portfolio/blob/master/public/images/hero.png?raw=true";
+        "https://github.com/tohhongxiang/remix-portfolio/blob/master/public/images/hero.png?raw=true";
 
     const png = await createProjectOGImage(
         title,

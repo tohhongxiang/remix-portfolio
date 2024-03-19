@@ -3,7 +3,7 @@ title: "Gallereddit"
 thumbnail: /project_screenshots/gallereddit/thumbnail.jpg
 description: A small gallery Single-Page-Application working with Reddit's API
 detailedDescription: This is a webpage primarily for browsing images on Reddit. This uses Reddit's OAuth2 workflow and other Reddit APIs to pull updated data from reddit directly
-githubLink: https://github.com/tohhongxiang123/Gallereddit
+githubLink: https://github.com/tohhongxiang/Gallereddit
 screenshots:
     [
         /project_screenshots/gallereddit/image-1.jpg,

@@ -4,7 +4,7 @@ export default function Footer() {
             <ul className="flex gap-4">
                 <li>
                     <a
-                        href="https://github.com/tohhongxiang123"
+                        href="https://github.com/tohhongxiang"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -21,7 +21,7 @@ export default function Footer() {
                 </li>
                 <li>
                     <a
-                        href="https://www.linkedin.com/in/toh-hong-xiang/"
+                        href="https://www.linkedin.com/in/tohhongxiang/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

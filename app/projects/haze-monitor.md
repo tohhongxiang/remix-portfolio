@@ -3,7 +3,7 @@ title: "Haze Monitor"
 thumbnail: /project_screenshots/haze-monitor/thumbnail.jpg
 description: Small NodeJS/Express website used to monitor PSI conditions in Singapore
 detailedDescription: With the hazy conditions in Singapore in 2019, this website was made to monitor the air quality of the island.
-githubLink: https://github.com/tohhongxiang123/Haze-monitor
+githubLink: https://github.com/tohhongxiang/Haze-monitor
 screenshots:
     [
         /project_screenshots/haze-monitor/image-1.jpg,

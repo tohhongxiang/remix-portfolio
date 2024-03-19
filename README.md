@@ -7,7 +7,7 @@ A simple portfolio site created using RemixJS
 Clone and install dependencies
 
 ```sh
-git clone https://github.com/tohhongxiang123/remix-portfolio
+git clone https://github.com/tohhongxiang/remix-portfolio
 cd remix-portfolio
 
 npm install
