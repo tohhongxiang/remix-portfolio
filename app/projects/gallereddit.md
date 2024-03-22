@@ -9,7 +9,7 @@ screenshots:
         /project_screenshots/gallereddit/image-1.jpg,
         /project_screenshots/gallereddit/image-2.jpg,
     ]
-date: June 2023
+date: October 2019
 ---
 
 A small gallery Single Page Application (SPA) working with Reddit's API. Used to learn how to handle OAuth2, APIs and React Hooks.

@@ -11,7 +11,7 @@ screenshots:
         /project_screenshots/haze-monitor/image-3.jpg,
         /project_screenshots/haze-monitor/image-4.jpg,
     ]
-date: June 2019
+date: October 2019
 ---
 
 Data pulled from [Singapore's PSI API](https://data.gov.sg/dataset/psi) provided under the [Singapore Open Data Licence](https://data.gov.sg/open-data-licence)

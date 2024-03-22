@@ -12,7 +12,7 @@ screenshots:
         /project_screenshots/nextjs-blog/image-3.jpg,
         /project_screenshots/nextjs-blog/image-4.jpg,
     ]
-date: Jan 2024
+date: February 2024
 featured: true
 ---
 

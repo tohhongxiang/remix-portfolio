@@ -11,7 +11,7 @@ screenshots:
         /project_screenshots/lais/image-3.jpg,
         /project_screenshots/lais/image-4.jpg,
     ]
-date: Feb 2024
+date: February 2024
 ---
 
 ## Inspiration
