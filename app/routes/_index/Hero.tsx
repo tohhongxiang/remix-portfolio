@@ -1,7 +1,6 @@
 import { m, useAnimationControls } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import BlurryBlob from "~/components/blobs/blurry-blob";
 import LightDarkVariant from "~/components/light-dark-variant";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
@@ -77,7 +76,7 @@ export default function HeroSection() {
                 "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-8 p-4 sm:py-16"
             )}
         >
-            <BlurryBlob className="absolute left-1/2 top-1/2 h-[500px] w-full -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 md:w-3/4" />
+            <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(#00000033_1px,#00000000_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:bg-[radial-gradient(#ffffff33_1px,#00000000_1px)]"></div>
             <div className="relative flex flex-col items-center justify-center gap-x-4 gap-y-2">
                 <m.div
                     initial="hidden"

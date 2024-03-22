@@ -23,7 +23,7 @@ export default function ProjectsIndexPage() {
     const navigate = useNavigate();
 
     return (
-        <div className="relative mx-auto flex max-w-prose flex-col gap-4 px-4 py-16">
+        <div className="relative mx-auto flex w-full max-w-prose flex-col gap-4 px-4 py-16">
             <div>
                 <Button
                     className="group mb-4"
