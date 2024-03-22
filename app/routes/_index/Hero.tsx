@@ -73,7 +73,7 @@ export default function HeroSection() {
     return (
         <section
             className={cn(
-                "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-8 p-4 sm:py-16"
+                "relative -mb-16 flex min-h-screen w-full flex-grow flex-col justify-center gap-x-8 gap-y-8 p-4"
             )}
         >
             <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(#00000033_1px,#00000000_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:bg-[radial-gradient(#ffffff33_1px,#00000000_1px)]"></div>
@@ -135,7 +135,7 @@ export default function HeroSection() {
                             <m.h1
                                 variants={ctaTextItemVariants}
                                 className={cn(
-                                    "text-center text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl",
+                                    "text-balance text-center text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl",
                                     heroTextGradientClassNames
                                 )}
                             >
@@ -143,7 +143,7 @@ export default function HeroSection() {
                             </m.h1>
                             <m.p
                                 className={cn(
-                                    "mb-4 text-center text-lg font-semibold text-foreground/80 sm:text-xl"
+                                    "mb-4 text-balance text-center text-lg font-semibold text-foreground/80 sm:text-xl"
                                 )}
                                 variants={ctaTextItemVariants}
                             >
