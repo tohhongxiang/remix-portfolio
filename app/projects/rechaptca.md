@@ -13,6 +13,7 @@ screenshots:
         /project_screenshots/rechaptca/image-4.jpg,
     ]
 date: January 2024
+technologies: [React]
 featured: true
 ---
 

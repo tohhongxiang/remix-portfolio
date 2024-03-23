@@ -12,6 +12,7 @@ export default function ProjectCard({
     detailedDescription,
     githubLink,
     demoLink,
+    technologies,
 }: Project) {
     const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion)");
 
@@ -56,6 +57,18 @@ export default function ProjectCard({
                 <p className="text-md mt-2 text-muted-foreground">
                     {detailedDescription}
                 </p>
+                <ul className="mt-2 flex flex-wrap gap-2">
+                    {technologies?.map((technology) => (
+                        <li
+                            key={technology}
+                            className="border-muted-foregroud rounded-full border px-3 py-1"
+                        >
+                            <p className="text-sm font-light text-muted-foreground">
+                                {technology}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
                 <div className="my-4 inline-flex w-full -space-x-px rounded-md">
                     <Button
                         className="z-20 w-full rounded-none rounded-l-md outline-none"

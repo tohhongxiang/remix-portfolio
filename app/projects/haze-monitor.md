@@ -12,6 +12,7 @@ screenshots:
         /project_screenshots/haze-monitor/image-4.jpg,
     ]
 date: October 2019
+technologies: [ExpressJS]
 ---
 
 Data pulled from [Singapore's PSI API](https://data.gov.sg/dataset/psi) provided under the [Singapore Open Data Licence](https://data.gov.sg/open-data-licence)

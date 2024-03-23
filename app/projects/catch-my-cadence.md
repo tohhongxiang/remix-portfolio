@@ -2,7 +2,7 @@
 title: "Catch My Cadence - Flutter Android App for Runners"
 thumbnail: /project_screenshots/catch-my-cadence/thumbnail.jpg
 description: An android application that plays songs with a BPM matching your running cadence
-detailedDescription: An android application built in Flutter, integrated with the Spotify Songs API to automatically play songs based on the cadence (steps per minute) of a runner. Playing songs that match a runner's cadence can help the runner maintain his pace throughout his run.
+detailedDescription: A Flutter application that automatically plays songs based on the user's cadence (steps per minute). Playing songs that match a runner's cadence can help the runner maintain his pace throughout his run.
 githubLink: https://github.com/CZ2006-TODO/catch-my-cadence
 screenshots:
     [
@@ -12,6 +12,7 @@ screenshots:
         /project_screenshots/catch-my-cadence/image-3.jpg,
     ]
 date: November 2021
+technologies: [Flutter]
 featured: true
 ---
 

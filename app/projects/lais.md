@@ -11,6 +11,7 @@ screenshots:
         /project_screenshots/lais/image-3.jpg,
         /project_screenshots/lais/image-4.jpg,
     ]
+technologies: [React, NextJS, Typescript, Python]
 date: February 2024
 ---
 

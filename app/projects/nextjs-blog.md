@@ -13,6 +13,7 @@ screenshots:
         /project_screenshots/nextjs-blog/image-4.jpg,
     ]
 date: February 2024
+technologies: [React, NextJS, Typescript, Markdown]
 featured: true
 ---
 

@@ -10,6 +10,7 @@ screenshots:
         /project_screenshots/gallereddit/image-2.jpg,
     ]
 date: October 2019
+technologies: [React, ExpressJS]
 ---
 
 A small gallery Single Page Application (SPA) working with Reddit's API. Used to learn how to handle OAuth2, APIs and React Hooks.
