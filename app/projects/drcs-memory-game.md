@@ -14,6 +14,7 @@ screenshots:
         /project_screenshots/drcs-memory-game/image-4.jpg,
     ]
 date: March 2024
+technologies: [React, TailwindCSS, Framer Motion, PWA]
 featured: true
 ---
 

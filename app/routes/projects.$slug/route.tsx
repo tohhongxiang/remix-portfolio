@@ -105,13 +105,25 @@ export default function SpecificProjectRoute() {
                     </Button>
                 </div>
                 <h1
-                    className="text-center text-4xl font-bold lg:text-5xl"
+                    className="text-balance text-center text-4xl font-bold lg:text-5xl"
                     style={{ viewTransitionName: `${slug}-title` }}
                 >
                     {frontmatter.title}
                 </h1>
+                <ul className="mt-2 flex flex-wrap items-center justify-center gap-2">
+                    {frontmatter.technologies?.map((technology) => (
+                        <li
+                            key={technology}
+                            className="border-muted-foregroud rounded-full border px-3 py-1"
+                        >
+                            <p className="text-sm font-light text-muted-foreground">
+                                {technology}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
                 <p
-                    className="text-center text-muted-foreground"
+                    className="text-balance text-center text-muted-foreground"
                     style={{
                         viewTransitionName: `${slug}-detailed-description`,
                     }}

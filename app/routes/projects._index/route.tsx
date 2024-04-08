@@ -41,17 +41,7 @@ export default function ProjectsIndexPage() {
                 {data.projects.map((project) => (
                     <li key={project.title}>
                         <div className="">
-                            <ProjectCard
-                                title={project.title}
-                                thumbnail={project.thumbnail}
-                                description={project.description}
-                                detailedDescription={
-                                    project.detailedDescription
-                                }
-                                slug={project.slug}
-                                githubLink={project.githubLink}
-                                demoLink={project.demoLink}
-                            />
+                            <ProjectCard {...project} />
                         </div>
                     </li>
                 ))}

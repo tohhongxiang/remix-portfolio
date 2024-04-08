@@ -12,7 +12,8 @@ screenshots:
         /project_screenshots/rechaptca/image-3.jpg,
         /project_screenshots/rechaptca/image-4.jpg,
     ]
-date: Jan 2024
+date: January 2024
+technologies: [React]
 ---
 
 ## Inspiration

@@ -2,8 +2,9 @@ import { Link } from "@remix-run/react";
 import { ChevronRight } from "lucide-react";
 import ProjectCard from "~/components/project-card";
 import { Button } from "~/components/ui/button";
+import { ProjectFrontMatter } from "~/lib/post.server";
 
-export interface Project {
+export interface Project extends ProjectFrontMatter {
     slug: string;
     title: string;
     thumbnail: string;
@@ -31,17 +32,7 @@ export default function Projects({ projects }: ProjectProps) {
                     {projects.map((project) => (
                         <li key={project.title}>
                             <div>
-                                <ProjectCard
-                                    title={project.title}
-                                    thumbnail={project.thumbnail}
-                                    description={project.description}
-                                    detailedDescription={
-                                        project.detailedDescription
-                                    }
-                                    slug={project.slug}
-                                    githubLink={project.githubLink}
-                                    demoLink={project.demoLink}
-                                />
+                                <ProjectCard {...project} />
                             </div>
                         </li>
                     ))}

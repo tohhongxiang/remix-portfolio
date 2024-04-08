@@ -14,6 +14,7 @@ export type ProjectFrontMatter = {
     githubLink: string;
     demoLink?: string;
     date: string;
+    technologies?: string[];
     featured: boolean;
 };
 
@@ -58,6 +59,7 @@ export async function getProject(directory: string, slug: string) {
         frontmatter: {
             ...post.frontmatter,
             screenshots: post.frontmatter.screenshots ?? [],
+            technologies: post.frontmatter.technologies ?? [],
         },
     };
 }

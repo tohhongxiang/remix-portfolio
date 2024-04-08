@@ -11,7 +11,8 @@ screenshots:
         /project_screenshots/directus-nextjs/image-3.jpg,
         /project_screenshots/directus-nextjs/image-4.jpg,
     ]
-date: June 2023
+date: July 2023
+technologies: [React, Typescript, PostgreSQL, Directus, TailwindCSS]
 featured: true
 ---
 
