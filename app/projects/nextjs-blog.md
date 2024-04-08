@@ -1,12 +1,13 @@
 ---
 title: NextJS Blog
-thumbnail: /project_screenshots/nextjs-blog/thumbnail.jpg
+thumbnail: /project_screenshots/nextjs-blog/thumbnail.mp4
 description: Blog/Portfolio website created with NextJS and Tailwind
 detailedDescription: A responsive file-based blog created using NextJS 12 and TailwindCSS. Posts and notes are written with markdown, including LaTeX support.
 githubLink: https://github.com/tohhongxiang/Blog
 demoLink: https://personalblog-nine.vercel.app/
 screenshots:
     [
+        /project_screenshots/nextjs-blog/thumbnail.mp4,
         /project_screenshots/nextjs-blog/image-1.jpg,
         /project_screenshots/nextjs-blog/image-2.jpg,
         /project_screenshots/nextjs-blog/image-3.jpg,

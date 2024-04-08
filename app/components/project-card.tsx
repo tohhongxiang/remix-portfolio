@@ -31,12 +31,19 @@ export default function ProjectCard({
                         : `${slug}-cover-image`,
                 }}
             >
-                <img
-                    src={thumbnail}
-                    alt={""}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105 group-hover/card:scale-105"
-                />
+                {thumbnail.includes("mp4") ? (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
+                    <video width="320" height="240" autoPlay muted loop>
+                        <source src={thumbnail} type="video/mp4" />
+                    </video>
+                ) : (
+                    <img
+                        src={thumbnail}
+                        alt={""}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-all duration-150 hover:scale-105 focus:scale-105 group-hover/card:scale-105"
+                    />
+                )}
             </div>
             <div className="basis-2/3">
                 <Link

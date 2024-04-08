@@ -161,12 +161,26 @@ export default function SpecificProjectRoute() {
             >
                 {frontmatter.screenshots.map((image, index) => (
                     <ImageCarousel.Item key={image}>
-                        <img
-                            src={image}
-                            alt=""
-                            className="aspect-video h-full w-full rounded-md object-contain"
-                            loading={index === 0 ? "eager" : "lazy"}
-                        />
+                        {image.includes("mp4") ? (
+                            // eslint-disable-next-line jsx-a11y/media-has-caption
+                            <video
+                                width="100%"
+                                height="100%"
+                                autoPlay
+                                muted
+                                loop
+                                controls
+                            >
+                                <source src={image} type="video/mp4" />
+                            </video>
+                        ) : (
+                            <img
+                                src={image}
+                                alt=""
+                                className="aspect-video h-full w-full rounded-md object-contain"
+                                loading={index === 0 ? "eager" : "lazy"}
+                            />
+                        )}
                     </ImageCarousel.Item>
                 ))}
             </ImageCarousel>

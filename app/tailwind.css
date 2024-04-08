@@ -94,4 +94,10 @@ body {
     body {
         @apply bg-background text-foreground;
     }
+
+    video {
+        clip-path: inset(1px 1px);
+    }
 }
+
+

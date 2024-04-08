@@ -13,7 +13,6 @@ screenshots:
         /project_screenshots/rechaptca/image-4.jpg,
     ]
 date: Jan 2024
-featured: true
 ---
 
 ## Inspiration
